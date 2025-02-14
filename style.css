@@ -22,7 +22,28 @@
 
 /*MOBILE FIRST (375px) */
 
+#thecart{
+    display: none;
+}
 
+.principal{
+    display: flex;
+    flex-flow: column row;
+    flex-wrap: wrap;
+}
+
+.desserts.image{
+    background-image: url(assets/images/image-baklava-tablet.jpg);
+    width: 400px;
+    height: 300px;
+}
+
+.desserts{
+    width: 400px;
+    height: 525px;
+    border-style: solid;
+    border-color: orange;
+}
 
 
 
