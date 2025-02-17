@@ -9,15 +9,15 @@
 
 :root{
     --font1: "Red Hat Text", serif; /*Font size (product names): 16px*/
-    --Red: hsl(14, 86%, 42%)
-    --Green: hsl(159, 69%, 38%)
+    --Red: hsl(14, 86%, 42%);
+    --Green: hsl(159, 69%, 38%);
     
-    --Rose50: hsl(20, 50%, 98%)
-    --Rose100: hsl(13, 31%, 94%)
-    --Rose300: hsl(14, 25%, 72%)
-    --Rose400: hsl(7, 20%, 60%)
-    --Rose500: hsl(12, 20%, 44%)
-    --Rose900: hsl(14, 65%, 9%)
+    --Rose50: hsl(20, 50%, 98%);
+    --Rose100: hsl(13, 31%, 94%);
+    --Rose300: hsl(14, 25%, 72%);
+    --Rose400: hsl(7, 20%, 60%);
+    --Rose500: hsl(12, 20%, 44%);
+    --Rose900: hsl(14, 65%, 9%);
 }
 
 /*MOBILE FIRST (375px) */
@@ -28,21 +28,28 @@
 
 .principal{
     display: flex;
-    flex-flow: column row;
+    flex-flow: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.desserts.image{
-    background-image: url(assets/images/image-baklava-tablet.jpg);
-    width: 400px;
-    height: 300px;
+.desserts-cards img{
+   max-width: 100%;
 }
 
-.desserts{
-    width: 400px;
+.desserts-cards{
+    width: 350px;
     height: 525px;
     border-style: solid;
     border-color: orange;
+    margin: 10px;
+
+    font-family: var(--font1);
+}
+
+.desserts-cards h1{
+    color: var(--Rose100);
 }
 
 
