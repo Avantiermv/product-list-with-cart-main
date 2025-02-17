@@ -34,13 +34,9 @@
     align-items: center;
 }
 
-.desserts-cards img{
-   max-width: 100%;
-}
-
 .desserts-cards{
     width: 350px;
-    height: 525px;
+    height: 390px;
     border-style: solid;
     border-color: orange;
     margin: 10px;
@@ -48,11 +44,49 @@
     font-family: var(--font1);
 }
 
+.desserts-cards img{
+    max-width: 100%;
+    border-radius: 15px;
+ }
+
+ .div-button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+ .desserts-cards>.div-button>.button{
+    background-color: red;
+    width: 200px;
+    height: 40px;
+    border-radius: 45px;
+    position: absolute;
+    transform: translate(3px, -30px);
+ }
+
+ .text{
+    margin-top: 30px;
+ }
+
 .desserts-cards h1{
-    color: var(--Rose100);
+    color: var(--Rose300);
+    font-size: 15px;
+}
+
+.desserts-cards h2{
+    color: var(--Rose500);
+    font-size: 22px;
 }
 
 
+.desserts-cards h3{
+    color: var(--Red);
+    font-size: 18px;
+}
+
+.desserts-cards h1,h2,h3{
+    margin-top: 5px;
+}
 
 
 

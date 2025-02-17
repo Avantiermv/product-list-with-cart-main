@@ -12,6 +12,9 @@ function load() {
                 image.src = dessert.image.mobile;
                 image.alt = dessert.name;
 
+                const button = document.querySelector('button');
+                
+
                 const title = document.createElement("h1");
                 title.textContent = dessert.name;
 
