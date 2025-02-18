@@ -78,7 +78,6 @@
     font-size: 22px;
 }
 
-
 .desserts-cards h3{
     color: var(--Red);
     font-size: 18px;
@@ -86,6 +85,10 @@
 
 .desserts-cards h1,h2,h3{
     margin-top: 5px;
+}
+
+.desserts-cards h3::before{
+    content: "$";
 }
 
 
