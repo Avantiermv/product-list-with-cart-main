@@ -55,8 +55,25 @@
     justify-content: center;
 }
 
+.div-button > button {
+    display: flex;
+    flex-flow: wrap row;
+    align-items: center;
+    justify-content: center;
+    border-color: var(--Rose900);
+}
+
+.div-button > button > img,p{
+    padding: 8px;
+}
+
+.div-button > p{
+    color: var(--Rose900);
+}
+
+
  .desserts-cards>.div-button>.button{
-    background-color: red;
+    background-color: var(--Rose50);
     width: 200px;
     height: 40px;
     border-radius: 45px;

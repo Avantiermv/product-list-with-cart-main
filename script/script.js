@@ -21,6 +21,12 @@ function load() {
                 button.type = "submit";
                 button.classList.add("button");
 
+                const buttonIcon = document.createElement("img");
+                buttonIcon.src = "./assets/images/icon-add-to-cart.svg";
+
+                const textButton = document.createElement("p");
+                textButton.textContent = "Add to cart";
+
                 const textContent = document.createElement("div");
                 textContent.classList.add("text");
 
@@ -35,6 +41,8 @@ function load() {
                 dessertPrice.textContent = price;
                 
                 divButton.appendChild(button);
+                button.appendChild(buttonIcon);
+                button.appendChild(textButton);
                 textContent.appendChild(title);
                 textContent.appendChild(dessertName);
                 textContent.appendChild(dessertPrice);
