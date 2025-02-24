@@ -16,6 +16,18 @@ function load() {
                 const divButton = document.createElement("div");
                 divButton.classList.add("div-button");
                 divButton.id = "add-button";
+                divButton.onclick = function() {
+                    showPlusMinusButton(this);
+                };
+
+                //Criar um elemento div para o plusminusbutton aparecer
+                //Criar um elemento para o minusicon que é uma imagem
+                //Criar um elemento para o spannumber que foi adicionada ao carrinho que é um span
+                //Criar um elementp para o plusicon que é uma imagem
+
+                //plusicon adiciona minusicon como filho
+                //adiciona spannumber como filho
+                //adiciona plusicon como filho
 
                 const button = document.createElement("button");
                 button.type = "submit";
@@ -41,6 +53,7 @@ function load() {
                 dessertPrice.textContent = price;
                 
                 divButton.appendChild(button);
+                //divButton adiciona minusplusbutton como filho
                 button.appendChild(buttonIcon);
                 button.appendChild(textButton);
                 textContent.appendChild(title);
@@ -56,3 +69,7 @@ function load() {
         });
 }
 load();
+
+function showPlusMinusButton(){
+    alert('Rapaz, ele tá sem zap!!')
+}
