@@ -57,7 +57,7 @@
 }
 
 .div-button>button {
-    display: flex;
+    display: none;
     flex-flow: wrap row;
     align-items: center;
     justify-content: center;
@@ -77,8 +77,8 @@ p {
     color: var(--Rose900);
 }
 
-button.plus-minus-button{
-    display: none;
+.plus-minus-button{
+    display: flex;
     width: 200px;
     height: 40px;
     border-radius: 45px;
@@ -89,8 +89,12 @@ button.plus-minus-button{
     transform: translate(3px, -30px);
 }
 
-.plus-minus-button:hover{
-    cursor: pointer;
+.buttonIncrements{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    border-color: var(--Red);
 }
 
 .desserts-cards>.div-button>.button {

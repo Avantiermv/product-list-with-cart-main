@@ -21,8 +21,8 @@ function load() {
                 };
 
                 //Criar um elemento div para o plusminusbutton aparecer
-                //Criar um elemento para o minusicon que é uma imagem
-                //Criar um elemento para o spannumber que foi adicionada ao carrinho que é um span
+                //Criar um elemento button para o decrement
+                //Criar um elemento span para o n
                 //Criar um elementp para o plusicon que é uma imagem
 
                 //plusicon adiciona minusicon como filho
