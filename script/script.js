@@ -60,7 +60,6 @@ function load() {
                 textContent.appendChild(dessertName);
                 textContent.appendChild(dessertPrice);
 
-
                 card.appendChild(image);
                 card.appendChild(divButton);
                 card.appendChild(textContent);
