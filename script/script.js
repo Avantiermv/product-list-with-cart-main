@@ -21,13 +21,34 @@ function load() {
                 };
 
                 //Criar um elemento div para o plusminusbutton aparecer
-                //Criar um elemento button para o decrement
+                const plusminusbutton = document.createElement("div");
+                //adicionar o classlist do plusminusbutton
+                plusminusbutton.classList.add("plus-minus-button");
+                //Criar um elemento button para o minusicon
+                const buttonMinus = document.createElement("button");
+                //adicionar o classlist de "button-increments"
+                buttonMinus.classList.add("buttonIncrements");
+                //criar um elemento img que vai ser o minus
+                const imgMinus = document.createElement("img");
+                imgMinus.src = "./assets/images/icon-decrement-quantity.svg";
                 //Criar um elemento span para o n
-                //Criar um elementp para o plusicon que é uma imagem
+                const spanNumberItens = document.createElement("span");
+                //adicionar o classlist do span
+                spanNumberItens.classList.add("itens-quantity");
+                //Criar um elemento button para o plusicon
+                const buttonPlus = document.createElement("button");
+                //adicionar o classlist de button increments
+                buttonPlus.classList.add("buttonIncrements");
+                //Criar um elemento img que vai ser o plus
+                const imgPlus = document.createElement("img");
+                imgPlus.src = "./assets/images/icon-increment-quantity.svg";
 
-                //plusicon adiciona minusicon como filho
-                //adiciona spannumber como filho
-                //adiciona plusicon como filho
+                //buttonMinus adiciona a imgMinus como filha
+                //buttonPlus adiciona a imgPlus como filha
+
+                //plusminusbutton adiciona o button de minusicon
+                //plusminusbutton adiciona o spna
+                //plusminusbutton adiciona o button de plusicon
 
                 const button = document.createElement("button");
                 button.type = "submit";

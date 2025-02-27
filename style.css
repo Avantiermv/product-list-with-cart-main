@@ -89,12 +89,21 @@ p {
     transform: translate(3px, -30px);
 }
 
-.buttonIncrements{
-    width: 20px;
-    height: 20px;
+button.buttonIncrements{
+    width: 22px;
+    height: 21px;
     background-color: rgba(255, 255, 255, 0);
-    border-radius: 20px;
-    border-color: var(--Red);
+    border-radius: 16px;
+    border-color: var(--Rose300);
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+span.itens-quantity{
+    color: var(--Rose100);
 }
 
 .desserts-cards>.div-button>.button {
