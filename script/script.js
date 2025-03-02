@@ -20,35 +20,31 @@ function load() {
                     showPlusMinusButton(this);
                 };
 
-                //Criar um elemento div para o plusminusbutton aparecer
                 const plusminusbutton = document.createElement("div");
-                //adicionar o classlist do plusminusbutton
                 plusminusbutton.classList.add("plus-minus-button");
-                //Criar um elemento button para o minusicon
+
                 const buttonMinus = document.createElement("button");
-                //adicionar o classlist de "button-increments"
                 buttonMinus.classList.add("buttonIncrements");
-                //criar um elemento img que vai ser o minus
+
                 const imgMinus = document.createElement("img");
                 imgMinus.src = "./assets/images/icon-decrement-quantity.svg";
-                //Criar um elemento span para o n
+
                 const spanNumberItens = document.createElement("span");
-                //adicionar o classlist do span
+                spanNumberItens.textContent = "1";
                 spanNumberItens.classList.add("itens-quantity");
-                //Criar um elemento button para o plusicon
+
                 const buttonPlus = document.createElement("button");
-                //adicionar o classlist de button increments
                 buttonPlus.classList.add("buttonIncrements");
-                //Criar um elemento img que vai ser o plus
+
                 const imgPlus = document.createElement("img");
                 imgPlus.src = "./assets/images/icon-increment-quantity.svg";
 
-                //buttonMinus adiciona a imgMinus como filha
-                //buttonPlus adiciona a imgPlus como filha
+                buttonMinus.appendChild(imgMinus);
+                buttonPlus.appendChild(imgPlus);
 
-                //plusminusbutton adiciona o button de minusicon
-                //plusminusbutton adiciona o spna
-                //plusminusbutton adiciona o button de plusicon
+                plusminusbutton.appendChild(buttonMinus);
+                plusminusbutton.appendChild(spanNumberItens);
+                plusminusbutton.appendChild(buttonPlus);
 
                 const button = document.createElement("button");
                 button.type = "submit";
@@ -63,18 +59,19 @@ function load() {
                 const textContent = document.createElement("div");
                 textContent.classList.add("text");
 
-
                 const title = document.createElement("h1");
                 title.textContent = dessert.category;
+
                 const dessertName = document.createElement("h2");
                 dessertName.textContent = dessert.name;
+
                 const dessertPrice = document.createElement("h3");
                 let price = parseFloat(dessert.price).toFixed(2);
                 price = price.padStart(4, '0');
                 dessertPrice.textContent = price;
                 
                 divButton.appendChild(button);
-                //divButton adiciona minusplusbutton como filho
+                divButton.appendChild(plusminusbutton);
                 button.appendChild(buttonIcon);
                 button.appendChild(textButton);
                 textContent.appendChild(title);
@@ -85,11 +82,24 @@ function load() {
                 card.appendChild(divButton);
                 card.appendChild(textContent);
                 principal.appendChild(card);
+
+                function showPlusMinusButton(){
+                    if(divButton.style.display === "flex" && plusminusbutton.style.display === "none"){
+                        divButton.style.display = "none";
+                        plusminusbutton.style.display = "flex";
+                    } else {
+                        divButton.style.display = "flex";
+                        plusminusbutton.style.display = "none";
+                    }
+                }
+
             })
+
+            
+
         });
+
+        
 }
 load();
 
-function showPlusMinusButton(){
-    alert('Rapaz, ele tá sem zap!!')
-}

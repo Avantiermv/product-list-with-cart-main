@@ -57,7 +57,7 @@
 }
 
 .div-button>button {
-    display: none;
+    display: flex;
     flex-flow: wrap row;
     align-items: center;
     justify-content: center;
@@ -78,7 +78,7 @@ p {
 }
 
 .plus-minus-button{
-    display: flex;
+    display: none;
     width: 200px;
     height: 40px;
     border-radius: 45px;
