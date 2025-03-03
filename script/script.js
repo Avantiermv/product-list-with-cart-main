@@ -19,6 +19,9 @@ function load() {
                     showPlusMinusButton(this);
                 };
 
+                const divalignplusminus = document.createElement("div");
+                divalignplusminus.classList.add("to-align-plusminus");
+
                 const plusminusbutton = document.createElement("div");
                 plusminusbutton.classList.add("plus-minus-button");
 
@@ -45,6 +48,8 @@ function load() {
                 plusminusbutton.appendChild(spanNumberItens);
                 plusminusbutton.appendChild(buttonPlus);
 
+                divalignplusminus.appendChild(plusminusbutton);
+
                 const button = document.createElement("button");
                 button.type = "submit";
                 button.classList.add("button");
@@ -70,7 +75,6 @@ function load() {
                 dessertPrice.textContent = price;
                 
                 divButton.appendChild(button);
-                divButton.appendChild(plusminusbutton);
                 button.appendChild(buttonIcon);
                 button.appendChild(textButton);
                 textContent.appendChild(title);
@@ -79,18 +83,26 @@ function load() {
 
                 card.appendChild(image);
                 card.appendChild(divButton);
+                card.appendChild(divalignplusminus);
                 card.appendChild(textContent);
                 principal.appendChild(card);
 
-                function showPlusMinusButton(){
-                    if(divButton.style.display === "flex" && plusminusbutton.style.display === "none"){
-                        divButton.style.display = "none";
-                        plusminusbutton.style.display = "flex";
-                    } else {
-                        divButton.style.display = "flex";
-                        plusminusbutton.style.display = "none";
-                    }
-                }
+                divalignplusminus.style.display = 'none';
+
+                
+                button.addEventListener('click', (e) => {
+                    divButton.classList.add("div-button-hidden");
+                    setTimeout(() => {
+                        divalignplusminus.style.display = 'flex'
+                    }, 100);
+                });
+
+
+                //resolver esse problema aqui
+                button.addEventListener('mouseout', (e) => {
+                    divButton.add("duv-button-visible");
+                    divalignplusminus.style.display = 'none';
+                });
 
             })
 
