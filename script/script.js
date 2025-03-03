@@ -8,7 +8,6 @@ function load() {
                 const card = document.createElement("div");
                 card.classList.add("desserts-cards");
 
-               /*Criar um loop aqui*/ 
                 const image = document.createElement("img");
                 image.src = dessert.image.mobile;
                 image.alt = dessert.name;
