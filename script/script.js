@@ -1,7 +1,7 @@
 function load() {
-    fetch('./script/data.json')
-        .then(response => response.json())
-        .then(desserts => {
+    fetch('./script/data.json') //Por meio de requisição está acessando os dados do arquivo data.json
+        .then(response => response.json()) // o response, pega os dados que o fetch acessou por meio de requisição e depois é coonvertido para algo usável no JS
+        .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
             const principal = document.querySelector('#desserts-container');
 
             desserts.map(dessert => {
@@ -15,9 +15,6 @@ function load() {
                 const divButton = document.createElement("div");
                 divButton.classList.add("div-button");
                 divButton.id = "add-button";
-                divButton.onclick = function() {
-                    showPlusMinusButton(this);
-                };
 
                 const divalignplusminus = document.createElement("div");
                 divalignplusminus.classList.add("to-align-plusminus");
@@ -88,26 +85,31 @@ function load() {
                 principal.appendChild(card);
 
                 divalignplusminus.style.display = 'none';
-
                 
                 button.addEventListener('click', (e) => {
                     divButton.classList.add("div-button-hidden");
+                    divalignplusminus.classList.add("to-align-plusminus-visible");
+                    divalignplusminus.classList.remove("to-align-plusminus-hidden");
+                    divButton.classList.remove("div-button-visible");
                     setTimeout(() => {
-                        divalignplusminus.style.display = 'flex'
+                        divalignplusminus.style.display = 'flex';
                     }, 100);
                 });
 
-
-                //resolver esse problema aqui
-                button.addEventListener('mouseout', (e) => {
-                    divButton.add("duv-button-visible");
-                    divalignplusminus.style.display = 'none';
-                });
+                plusminusbutton.addEventListener('mouseleave', (e) =>{
+                    divButton.classList.remove("div-button-hidden");
+                    divButton.classList.add("div-button-visible");
+                    divalignplusminus.classList.add("to-align-plusminus-hidden");       
+                    divalignplusminus.classList.remove("to-align-plusminus-visible");
+                    setTimeout(() => {
+                        divalignplusminus.style.display = 'none';
+                    }, 100);
+                })
 
             })
 
-            
-
+        }).catch(error => {
+            console.log('Error', error);
         });
 
         
