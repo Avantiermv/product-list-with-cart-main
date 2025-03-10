@@ -104,7 +104,13 @@ function load() {
                     setTimeout(() => {
                         divalignplusminus.style.display = 'none';
                     }, 100);
-                })
+                });
+
+                buttonMinus.addEventListener('click', (e) =>{
+                    const numberItensFormated = parseInt(spanNumberItens);
+                    spanNumberItens.textContent = numberItensFormated.value;
+                    numberItensFormated++;
+                });
 
             })
 
@@ -115,4 +121,3 @@ function load() {
         
 }
 load();
-
