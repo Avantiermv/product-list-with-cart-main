@@ -86,15 +86,21 @@ function load() {
 
                 divalignplusminus.style.display = 'none';
                 
-                button.addEventListener('click', (e) => {
-                    divButton.classList.add("div-button-hidden");
-                    divalignplusminus.classList.add("to-align-plusminus-visible");
-                    divalignplusminus.classList.remove("to-align-plusminus-hidden");
-                    divButton.classList.remove("div-button-visible");
-                    setTimeout(() => {
+                function showShoppingCar(){
+                    button.addEventListener('click', (e) => {
+                     divButton.classList.add("div-button-hidden");
+                     divalignplusminus.classList.add("to-align-plusminus-visible");
+                     divalignplusminus.classList.remove("to-align-plusminus-hidden");
+                     divButton.classList.remove("div-button-visible");
+                     setTimeout(() => {
                         divalignplusminus.style.display = 'flex';
-                    }, 100);
-                });
+                     }, 100);
+                     minusDecrement();
+                     plusIncrement();
+                    });
+                }
+                
+                button.addEventListener('click', showShoppingCar);
 
                 plusminusbutton.addEventListener('mouseleave', (e) =>{
                     divButton.classList.remove("div-button-hidden");
@@ -106,12 +112,23 @@ function load() {
                     }, 100);
                 });
 
-                buttonMinus.addEventListener('click', (e) =>{
-                    const numberItensFormated = parseInt(spanNumberItens);
-                    spanNumberItens.textContent = numberItensFormated.value;
-                    numberItensFormated++;
-                });
+                function decrement(){
+                    alert("Diminuindo item");
+                }
 
+                function increment(){
+                    alert("Aumentando item");
+                }
+
+                function minusDecrement(){
+                    buttonMinus.removeEventListener('click', showShoppingCar);
+                    buttonMinus.addEventListener('click', decrement);
+                }
+
+                function plusIncrement(){
+                    buttonPlus.removeEventListener('click', showShoppingCar);
+                    buttonPlus.addEventListener('click', increment);
+                }
             })
 
         }).catch(error => {
