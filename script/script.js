@@ -29,7 +29,7 @@ function load() {
                 imgMinus.src = "./assets/images/icon-decrement-quantity.svg";
 
                 const spanNumberItens = document.createElement("span");
-                spanNumberItens.textContent = "1";
+                spanNumberItens.textContent = 0;
                 spanNumberItens.classList.add("itens-quantity");
 
                 const buttonPlus = document.createElement("button");
@@ -113,18 +113,24 @@ function load() {
                 });
 
                 function decrement(){
-                    alert("Diminuindo item");
-                }
-
-                function increment(){
-                    alert("Aumentando item");
+                    let currentValue = parseInt(spanNumberItens.textContent, 10);
+                    if(currentValue > 0){
+                        currentValue--;
+                        spanNumberItens.textContent = currentValue;
+                    } else {
+                        alert("afi");
+                    }
+                }    
+                
+                function increment(valor){
+                    
                 }
 
                 function minusDecrement(){
                     buttonMinus.removeEventListener('click', showShoppingCar);
-                    buttonMinus.addEventListener('click', decrement);
+                    buttonMinus.addEventListener('click',decrement);
                 }
-
+                
                 function plusIncrement(){
                     buttonPlus.removeEventListener('click', showShoppingCar);
                     buttonPlus.addEventListener('click', increment);
