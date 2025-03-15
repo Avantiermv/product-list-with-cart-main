@@ -122,9 +122,10 @@ function load() {
                     }
                 }    
                 
+                //Só aumenta 1 número
                 function increment(valor){
                     let currentValue = parseInt(spanNumberItens.textContent, 10);
-                    if(currentValue < 0){
+                    if(currentValue <= 0){
                         currentValue++;
                         spanNumberItens.textContent = currentValue;
                     }
