@@ -124,6 +124,9 @@ function load() {
                     })
                 }
 
+                //criar uma array para os itens
+                //criar uma função que tira os itens
+                //criar uma função que bota os itens
                 //criar uma função que some todos os produtos que foram colocados
                 //criar uma div para o carrinho
 
