@@ -127,29 +127,6 @@ function load() {
                 //criar uma função que some todos os produtos que foram colocados
                 //criar uma div para o carrinho
 
-                let shoppingCar = [];
-
-                function decrement(dessert, numberItens){
-                    let currentValue = parseInt(numberItens.textContent, 10);
-                    if(currentValue > 0){
-                        currentValue--;
-                        numberItens.textContent = currentValue;
-
-                        const index = shoppingCar.findIndex(item => item.nome === dessert.nome);
-                        if (index !== -1) {
-                            shoppingCar.splice(index, 1);
-                        }
-                        console.log("Produto removido:", dessert.name);
-                    } 
-                }    
-                
-                function increment( dessert, numberItens){
-                    let currentValue = parseInt(numberItens.textContent, 10);
-                    currentValue++;
-                    numberItens.textContent = currentValue;
-                    shoppingCar.push(dessert);
-                    console.log("Produto adicionado:", dessert.name);
-                }
 
 
             });
