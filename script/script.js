@@ -4,7 +4,7 @@ function load() {
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
             const principal = document.querySelector('#desserts-container');
 
-            desserts.map(dessert => {
+            desserts.forEach(dessert => {
                 const card = document.createElement("div");
                 card.classList.add("desserts-cards");
 
@@ -112,38 +112,49 @@ function load() {
                     }, 100);
                 });
 
-                function decrement(){
-                    let currentValue = parseInt(spanNumberItens.textContent, 10);
-                    if(currentValue > 0){
-                        currentValue--;
-                        spanNumberItens.textContent = currentValue;
-                    } else {
-                        alert("afi");
-                    }
-                }    
-                
-                //Só aumenta 1 número
-                function increment(valor){
-                    let currentValue = parseInt(spanNumberItens.textContent, 10);
-                    currentValue++;
-                    spanNumberItens.textContent = currentValue;
-                }
-
                 function minusDecrement(){
-                    buttonMinus.removeEventListener('click', showShoppingCar);
-                    buttonMinus.addEventListener('click',decrement);
+                    buttonMinus.addEventListener('click', () => {
+                        decrement(dessert, spanNumberItens);
+                    });
                 }
                 
                 function plusIncrement(){
-                    buttonPlus.removeEventListener('click', showShoppingCar);
-                    buttonPlus.addEventListener('click', increment);
+                    buttonPlus.addEventListener('click', () => {
+                        increment(dessert, spanNumberItens);
+                    })
                 }
-            })
 
+                //criar uma função que some todos os produtos que foram colocados
+                //criar uma div para o carrinho
+
+                let shoppingCar = [];
+
+                function decrement(dessert, numberItens){
+                    let currentValue = parseInt(numberItens.textContent, 10);
+                    if(currentValue > 0){
+                        currentValue--;
+                        numberItens.textContent = currentValue;
+
+                        const index = shoppingCar.findIndex(item => item.nome === dessert.nome);
+                        if (index !== -1) {
+                            shoppingCar.splice(index, 1);
+                        }
+                        console.log("Produto removido:", dessert.name);
+                    } 
+                }    
+                
+                function increment( dessert, numberItens){
+                    let currentValue = parseInt(numberItens.textContent, 10);
+                    currentValue++;
+                    numberItens.textContent = currentValue;
+                    shoppingCar.push(dessert);
+                    console.log("Produto adicionado:", dessert.name);
+                }
+
+
+            });
         }).catch(error => {
             console.log('Error', error);
         });
-
-        
 }
 load();
