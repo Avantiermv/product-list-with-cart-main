@@ -92,9 +92,11 @@ function load() {
                      divalignplusminus.classList.add("to-align-plusminus-visible");
                      divalignplusminus.classList.remove("to-align-plusminus-hidden");
                      divButton.classList.remove("div-button-visible");
+                     
                      setTimeout(() => {
                         divalignplusminus.style.display = 'flex';
                      }, 100);
+
                      minusDecrement();
                      plusIncrement();
                     });
@@ -107,26 +109,32 @@ function load() {
                     divButton.classList.add("div-button-visible");
                     divalignplusminus.classList.add("to-align-plusminus-hidden");       
                     divalignplusminus.classList.remove("to-align-plusminus-visible");
+
+                    //aqui tem que ter um remove event listener de buttonPlus e buttonMinus, para que na hora que o mouse sair e voltar não aja um "engarrafamento de funções"
+
                     setTimeout(() => {
                         divalignplusminus.style.display = 'none';
                     }, 100);
                 });
 
-                function minusDecrement(){
-                    buttonMinus.addEventListener('click', () => {
-                        decrement(dessert, spanNumberItens);
-                    });
-                }
-                
-                function plusIncrement(){
-                    buttonPlus.addEventListener('click', () => {
-                        increment(dessert, spanNumberItens);
-                    })
-                }
+                function plusIncrement(){}
 
-                //criar uma array para os itens
+                function minusDecrement(){}
+
+                //criar uma função que encpasule a função additen e talvez tenha que criar uma para tirar itens
+
+                
+                let shoppingCar = [];
+              
+                function addIten(product, numberIten){
+                    let currentValue = parseInt(numberIten.textContent, 10) || 0;
+                    currentValue++;
+                    numberIten.textContent = currentValue;
+
+                    shoppingCar.push({ name: product.name, price: product.price});
+                    console.log("Produto: ", product.name, "foi adicionado.");
+                }
                 //criar uma função que tira os itens
-                //criar uma função que bota os itens
                 //criar uma função que some todos os produtos que foram colocados
                 //criar uma div para o carrinho
 
