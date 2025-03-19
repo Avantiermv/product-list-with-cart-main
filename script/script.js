@@ -109,23 +109,30 @@ function load() {
                     divButton.classList.add("div-button-visible");
                     divalignplusminus.classList.add("to-align-plusminus-hidden");       
                     divalignplusminus.classList.remove("to-align-plusminus-visible");
-
-                    //aqui tem que ter um remove event listener de buttonPlus e buttonMinus, para que na hora que o mouse sair e voltar não aja um "engarrafamento de funções"
-
                     setTimeout(() => {
                         divalignplusminus.style.display = 'none';
                     }, 100);
                 });
 
-                function plusIncrement(){}
+                // Todas as funções que somam algum item no carrinho ou tiram algun item do carrinho // 
 
-                function minusDecrement(){}
+                function plusIncrement(){
+                    buttonPlus.addEventListener('click', add);
+                }
 
-                //criar uma função que encpasule a função additen e talvez tenha que criar uma para tirar itens
+                function minusDecrement(){
+                    buttonMinus.addEventListener('click', remove);
+                }
 
-                
-                let shoppingCar = [];
-              
+                function add(){
+                    addIten(dessert, spanNumberItens);
+                }
+
+                function remove(){
+                    removeIten(dessert, spanNumberItens);
+                }
+
+                const shoppingCar = []; //Meu array com todos os itens adicionados
                 function addIten(product, numberIten){
                     let currentValue = parseInt(numberIten.textContent, 10) || 0;
                     currentValue++;
@@ -133,11 +140,25 @@ function load() {
 
                     shoppingCar.push({ name: product.name, price: product.price});
                     console.log("Produto: ", product.name, "foi adicionado.");
+                    console.log(shoppingCar);
                 }
-                //criar uma função que tira os itens
+                function removeIten(product, numberIten){
+                    let currentValue = parseInt(numberIten.textContent, 10) || 0;
+                    if(currentValue > 0){
+                        currentValue--;
+                        numberIten.textContent = currentValue;
+                        shoppingCar.pop({name: product.name, price: product.price});
+                        console.log("O produto ", product.name, " foi removido.");
+                        console.log(shoppingCar);
+                    } else {
+                        console.log("Erro")
+                    }
+                }
+
+                
                 //criar uma função que some todos os produtos que foram colocados
                 //criar uma div para o carrinho
-
+                //Fim das funções que somam um item ou retiram um item do carrinho //
 
 
             });
