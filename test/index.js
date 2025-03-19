@@ -13,11 +13,11 @@ const meusItens = [
 
 
 function somarTodosOsItensDoArray(preçoDoProduto){
-    let totalPreço = preçoDoProduto + preçoDoProduto;
+    let totalPreço = preçoDoProduto.price + preçoDoProduto.price;
     console.log(totalPreço);
 }
 
-somarTodosOsItensDoArray();
+somarTodosOsItensDoArray(meusItens);
 
 
 
