@@ -139,7 +139,7 @@ function load() {
                     numberIten.textContent = currentValue;
 
                     shoppingCar.push({ name: product.name, price: product.price});
-                    somarItens(product);
+                    addUpItemsPrice(product);
                     console.log("Produto: ", product.name, "foi adicionado.");
                     console.log(shoppingCar);
                     console.log(totalPrice);
@@ -149,20 +149,29 @@ function load() {
                     if(currentValue > 0){
                         currentValue--;
                         numberIten.textContent = currentValue;
-                        shoppingCar.splice({name: product.name, price: product.price});
+                        const index = shoppingCar.findIndex(item => item.name === product.name);
+                        if(index !== -1){
+                            shoppingCar.splice(index, 1);
+                            subtractItemsPrice(product);
+                        }
                         console.log("O produto ", product.name, " foi removido.");
                         console.log(shoppingCar);
                     } else {
-                        console.log("Erro")
+                        console.log("Erro");
                     }
                 }
 
-                //criar uma função que some todos os produtos que foram colocados
-                
-                function somarItens(priceItem){
+                function addUpItemsPrice(priceItem){
                     totalPrice += priceItem.price;
                     console.log(totalPrice);
                 }
+
+                function subtractItemsPrice(priceItem){
+                    totalPrice -= priceItem.price;
+                    console.log(totalPrice);
+                }
+
+
                 //criar uma div para o carrinho
                 //Fim das funções que somam um item ou retiram um item do carrinho //
 
