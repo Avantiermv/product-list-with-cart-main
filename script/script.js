@@ -92,7 +92,6 @@ function load() {
                      divalignplusminus.classList.add("to-align-plusminus-visible");
                      divalignplusminus.classList.remove("to-align-plusminus-hidden");
                      divButton.classList.remove("div-button-visible");
-                     
                      setTimeout(() => {
                         divalignplusminus.style.display = 'flex';
                      }, 100);
@@ -132,6 +131,7 @@ function load() {
                     removeIten(dessert, spanNumberItens);
                 }
 
+                let totalPrice = 0;
                 const shoppingCar = []; //Meu array com todos os itens adicionados
                 function addIten(product, numberIten){
                     let currentValue = parseInt(numberIten.textContent, 10) || 0;
@@ -139,6 +139,7 @@ function load() {
                     numberIten.textContent = currentValue;
 
                     shoppingCar.push({ name: product.name, price: product.price});
+                    somarItens(product);
                     console.log("Produto: ", product.name, "foi adicionado.");
                     console.log(shoppingCar);
                     console.log(totalPrice);
@@ -148,7 +149,7 @@ function load() {
                     if(currentValue > 0){
                         currentValue--;
                         numberIten.textContent = currentValue;
-                        shoppingCar.pop({name: product.name, price: product.price});
+                        shoppingCar.splice({name: product.name, price: product.price});
                         console.log("O produto ", product.name, " foi removido.");
                         console.log(shoppingCar);
                     } else {
@@ -156,12 +157,11 @@ function load() {
                     }
                 }
 
-                somarItens(, dessert);
                 //criar uma função que some todos os produtos que foram colocados
-                const totalPrice = [];
-                function somarItens(total, priceItem){
-                    
-                    
+                
+                function somarItens(priceItem){
+                    totalPrice += priceItem.price;
+                    console.log(totalPrice);
                 }
                 //criar uma div para o carrinho
                 //Fim das funções que somam um item ou retiram um item do carrinho //
