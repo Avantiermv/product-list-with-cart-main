@@ -141,6 +141,7 @@ function load() {
                     shoppingCar.push({ name: product.name, price: product.price});
                     console.log("Produto: ", product.name, "foi adicionado.");
                     console.log(shoppingCar);
+                    console.log(totalPrice);
                 }
                 function removeIten(product, numberIten){
                     let currentValue = parseInt(numberIten.textContent, 10) || 0;
@@ -155,8 +156,13 @@ function load() {
                     }
                 }
 
-                
+                somarItens(, dessert);
                 //criar uma função que some todos os produtos que foram colocados
+                const totalPrice = [];
+                function somarItens(total, priceItem){
+                    
+                    
+                }
                 //criar uma div para o carrinho
                 //Fim das funções que somam um item ou retiram um item do carrinho //
 
