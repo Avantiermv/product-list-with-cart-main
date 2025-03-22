@@ -4,6 +4,8 @@ function load() {
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
             const principal = document.querySelector('#desserts-container');
 
+            const shoppingCar = []; //Meu array com todos os itens adicionados
+            let totalPrice = 0;
             desserts.forEach(dessert => {
                 const card = document.createElement("div");
                 card.classList.add("desserts-cards");
@@ -118,62 +120,26 @@ function load() {
                 function plusIncrement(){
                     buttonPlus.addEventListener('click', add);
                 }
-
                 function minusDecrement(){
                     buttonMinus.addEventListener('click', remove);
                 }
-
                 function add(){
                     addIten(dessert, spanNumberItens);
                 }
-
                 function remove(){
                     removeIten(dessert, spanNumberItens);
                 }
 
-                let totalPrice = 0;
-                const shoppingCar = []; //Meu array com todos os itens adicionados
-                function addIten(product, numberIten){
-                    let currentValue = parseInt(numberIten.textContent, 10) || 0;
-                    currentValue++;
-                    numberIten.textContent = currentValue;
-
-                    shoppingCar.push({ name: product.name, price: product.price});
-                    addUpItemsPrice(product);
-                    console.log("Produto: ", product.name, "foi adicionado.");
-                    console.log(shoppingCar);
-                    console.log(totalPrice);
-                }
-                function removeIten(product, numberIten){
-                    let currentValue = parseInt(numberIten.textContent, 10) || 0;
-                    if(currentValue > 0){
-                        currentValue--;
-                        numberIten.textContent = currentValue;
-                        const index = shoppingCar.findIndex(item => item.name === product.name);
-                        if(index !== -1){
-                            shoppingCar.splice(index, 1);
-                            subtractItemsPrice(product);
-                        }
-                        console.log("O produto ", product.name, " foi removido.");
-                        console.log(shoppingCar);
-                    } else {
-                        console.log("Erro");
-                    }
-                }
-
-                function addUpItemsPrice(priceItem){
-                    totalPrice += priceItem.price;
-                    console.log(totalPrice);
-                }
-
-                function subtractItemsPrice(priceItem){
-                    totalPrice -= priceItem.price;
-                    console.log(totalPrice);
-                }
 
 
-                //criar uma div para o carrinho
-                //Fim das funções que somam um item ou retiram um item do carrinho //
+
+                    //criar uma função que adicona o iten ao carrinho
+                    //criar uma função que remove o item do carrinho
+                    //criar uma div para o carrinho
+                    //Fim das funções que somam um item ou retiram um item do carrinho //
+
+
+
 
 
             });
