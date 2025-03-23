@@ -130,7 +130,33 @@ function load() {
                     removeIten(dessert, spanNumberItens);
                 }
 
+                function addIten(product, numberIten){
+                    let currentValue = parseInt(numberIten.textContent, 10) || 0;
+                    currentValue++;
+                    numberIten.textContent = currentValue;
 
+                    shoppingCar.push({name: product.name, price: product.price});
+                    totalPrice += product.price;
+
+                    console.log("O produto ", product.name, "foi adicionado");
+                    console.log(totalPrice);
+                }
+
+                function removeIten(product, numberIten){
+                    let currentValue = parseInt(numberIten.textContent, 10) || 0;
+                    if(currentValue > 0){
+                        currentValue--;
+                        numberIten.textContent = currentValue;
+
+                        const index = shoppingCar.findIndex(item => item.price === product.price);
+                        if(index !== -1){
+                            shoppingCar.splice(index, 1);
+                            totalPrice -= product.price;
+                        }
+                    }
+                    console.log("O item ", product.name, "foi removido");
+                    console.log(totalPrice);
+                }
 
 
                     //criar uma função que adicona o iten ao carrinho
