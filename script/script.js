@@ -1,4 +1,4 @@
-function load() {
+/*function load() {
     fetch('./script/data.json') //Por meio de requisição está acessando os dados do arquivo data.json
         .then(response => response.json()) // o response, pega os dados que o fetch acessou por meio de requisição e depois é coonvertido para algo usável no JS
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
@@ -115,7 +115,7 @@ function load() {
                     }, 100);
                 });
 
-                // Todas as funções que somam algum item no carrinho ou tiram algun item do carrinho // 
+                //----------Todas as funções que somam algum item no carrinho ou tiram algun item do carrinho----------// 
 
                 function plusIncrement(){
                     buttonPlus.addEventListener('click', add);
@@ -157,20 +157,15 @@ function load() {
                     console.log("O item ", product.name, "foi removido");
                     console.log(totalPrice);
                 }
+                //----------Fim das funções que somam um item ou retiram um item do carrinho----------//
 
 
-                    //criar uma função que adicona o iten ao carrinho
-                    //criar uma função que remove o item do carrinho
+
                     //criar uma div para o carrinho
-                    //Fim das funções que somam um item ou retiram um item do carrinho //
-
-
-
-
-
+                    
             });
         }).catch(error => {
             console.log('Error', error);
         });
 }
-load();
+load();*/

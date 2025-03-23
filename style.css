@@ -179,6 +179,23 @@ h3 {
     content: "$";
 }
 
+.thecart{
+    width: 350px;
+    height: 490px;
+    border-style: solid;
+    border-color: orange;
+    border-radius: 20px;
+    margin: 10px;
+
+    font-family: var(--font1);
+}
+
+.thecart .thecart-title{
+    padding: 20px;
+    font-size: 27px;
+    color: var(--Red);
+}
+
 
 
 
