@@ -217,6 +217,7 @@ h3 {
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 10px;
 }
 
 .products .product-info{
@@ -243,6 +244,12 @@ h3 {
     justify-content: center;
 }
 
+.button-remove-from-cart:hover{
+    cursor: pointer;
+    background-color: var(--Rose100);
+    transition: 0.5s;
+}
+
 .products .product-info .additional-information{
     display: flex;
     flex-flow: row wrap;
@@ -253,6 +260,20 @@ h3 {
     padding: 0px;
     margin-right: 25px;
     margin-top: 10px;
+}
+
+.quantity-info{
+    color: var(--Red);
+    font-weight: bold;
+}
+
+.item-price{
+    color: var(--Rose400);
+}
+
+.quantity-price{
+    color: var(--Rose500);
+    font-weight: 600;
 }
 
 .order-total{
@@ -268,6 +289,15 @@ h3 {
 .order-total-p, .total-price{
     padding-left: 18px;
     padding-right: 10px;
+}
+
+.order-total-p{
+    font-weight: 500;
+}
+
+.total-price{
+    font-weight: bolder;
+    font-size: 20px;
 }
 
 .to-align-message{
@@ -307,6 +337,10 @@ h3 {
     margin-bottom: 20px;
     font-family: var(--font1);
     color: var(--Rose100);
+}
+
+.confirm-order:hover{
+    background-color: hsl(14, 90%, 30%);
 }
 
 
