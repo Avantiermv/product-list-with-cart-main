@@ -179,9 +179,9 @@ h3 {
     content: "$";
 }
 
-.thecart{
+.the-cart{
     width: 350px;
-    height: 490px;
+    height: 100%;
     border-style: solid;
     border-color: orange;
     border-radius: 20px;
@@ -190,10 +190,123 @@ h3 {
     font-family: var(--font1);
 }
 
-.thecart .thecart-title{
+.the-cart .the-cart-title{
     padding: 20px;
     font-size: 27px;
     color: var(--Red);
+}
+
+.added-products{
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.hr{
+    width: 270px;
+    margin-top: 10px;
+}
+
+.products{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.products .product-info{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.product-info h1{
+    color: var(--Rose900);
+    font-family: var(--font1);
+    font-size: 14px;
+}
+
+.button-remove-from-cart{
+    background-color: var(--Rose50);
+    width: 24px;
+    height: 24px;
+    border-radius: 40px;
+    border-style: solid;
+    border-color: var(--Rose400);
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products .product-info .additional-information{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.additional-information .quantity-info, .item-price, .quantity-price{
+    padding: 0px;
+    margin-right: 25px;
+    margin-top: 10px;
+}
+
+.order-total{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 30px;
+    padding-left: 20px;
+    margin-top: 22px;
+}
+
+.order-total-p, .total-price{
+    padding-left: 18px;
+    padding-right: 10px;
+}
+
+.to-align-message{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.message{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--Rose100);
+    border-radius: 15px;
+}
+
+.message p{
+    margin-left: 5px;
+}
+
+.to-align-confirm-order{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-order{
+    background-color: var(--Red);
+    border-style: none;
+    padding: 20px;
+    width: 310px;
+    border-radius: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: var(--font1);
+    color: var(--Rose100);
 }
 
 
