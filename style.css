@@ -23,10 +23,6 @@
 
 /*MOBILE FIRST (375px) */
 
-#thecart {
-    display: none;
-}
-
 .principal {
     display: flex;
     flex-flow: column;
@@ -40,6 +36,7 @@
     height: 390px;
     border-style: solid;
     border-color: orange;
+    box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.316);
     margin: 10px;
 
     font-family: var(--font1);
@@ -183,17 +180,36 @@ h3 {
     width: 350px;
     height: 100%;
     border-style: solid;
-    border-color: orange;
     border-radius: 20px;
+    border-style: none;
+    box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.316);
     margin: 10px;
 
     font-family: var(--font1);
 }
 
-.the-cart .the-cart-title{
+.products-added-info{
+    display: none;
+}
+
+.the-cart-title{
     padding: 20px;
     font-size: 27px;
     color: var(--Red);
+}
+
+.empty-cart-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    padding: 15px;
+}
+
+.empty-cart-p{
+    font-weight: 700;
+    font-family: var(--font1);
+    color: var(--Rose400);
 }
 
 .added-products{
@@ -206,11 +222,6 @@ h3 {
     margin-top: 20px;
 }
 
-.hr{
-    width: 270px;
-    margin-top: 10px;
-}
-
 .products{
     width: 100%;
     display: flex;
@@ -220,15 +231,20 @@ h3 {
     margin-bottom: 10px;
 }
 
-.products .product-info{
+.product-info{
     display: flex;
     flex-flow: column wrap;
 }
 
-.product-info h1{
+.product-name{
     color: var(--Rose900);
     font-family: var(--font1);
     font-size: 14px;
+}
+
+.hr{
+    width: 270px;
+    margin-top: 10px;
 }
 
 .button-remove-from-cart{
@@ -341,6 +357,8 @@ h3 {
 
 .confirm-order:hover{
     background-color: hsl(14, 90%, 30%);
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 
