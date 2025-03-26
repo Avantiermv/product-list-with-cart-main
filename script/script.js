@@ -6,6 +6,7 @@ function load() {
 
             const shoppingCar = []; //Meu array com todos os itens adicionados
             let totalPrice = 0;
+
             desserts.forEach(dessert => {
                 const card = document.createElement("div");
                 card.classList.add("desserts-cards");
@@ -138,8 +139,10 @@ function load() {
                     shoppingCar.push({name: product.name, price: product.price});
                     totalPrice += product.price;
 
+                    
                     console.log("O produto ", product.name, "foi adicionado");
                     console.log(totalPrice);
+                    spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                 }
 
                 function removeIten(product, numberIten){
@@ -156,6 +159,7 @@ function load() {
                     }
                     console.log("O item ", product.name, "foi removido");
                     console.log(totalPrice);
+                    spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                 }
                 //----------Fim das funções que somam um item ou retiram um item do carrinho----------// 
             });
@@ -165,6 +169,10 @@ function load() {
 
             const cartTitle = document.createElement('h1');
             cartTitle.classList.add('the-cart-title');
+            cartTitle.textContent = "Your cart ";
+
+            const spanCartTitle = document.createElement('span'); //Está sendo atualizado dentro da função desserts.forEach!
+            spanCartTitle.textContent = "( 0 )"
 
             const emptyCartInfo = document.createElement('div');
             emptyCartInfo.classList.add('empty-cart-info');
@@ -174,6 +182,7 @@ function load() {
 
             const emptyCartP = document.createElement('p');
             emptyCartP.classList.add('empty-cart-p');
+            emptyCartP.textContent = "Your itens will appear here"
 
             const productsAddedInfo = document.createElement('div');
             
@@ -238,12 +247,14 @@ function load() {
             confirmOrderButton.classList.add('confirm-order');
 
             theCart.appendChild(cartTitle);
+            cartTitle.appendChild(spanCartTitle);
             theCart.appendChild(emptyCartInfo);
             emptyCartInfo.appendChild(emptyCartImg);
             emptyCartInfo.appendChild(emptyCartP);
 
-            theCart.appendChild(productsAddedInfo);
-            productsAddedInfo.appendChild(adddedProducts);
+            
+
+
 
             principal.appendChild(theCart);
 
