@@ -117,7 +117,6 @@ function load() {
                 });
 
                 //----------Todas as funções que somam algum item no carrinho ou tiram algun item do carrinho----------// 
-
                 function plusIncrement(){
                     buttonPlus.addEventListener('click', add);
                 }
@@ -162,6 +161,12 @@ function load() {
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                 }
                 //----------Fim das funções que somam um item ou retiram um item do carrinho----------// 
+
+                function uptadeCart(){
+                    emptyCartInfo.remove('empty-cart-info-visible');
+                    emptyCartInfo.add('empty-cart-info-hidden');
+                }
+
             });
 
             const theCart = document.createElement('div');
@@ -175,7 +180,7 @@ function load() {
             spanCartTitle.textContent = "( 0 )"
 
             const emptyCartInfo = document.createElement('div');
-            emptyCartInfo.classList.add('empty-cart-info');
+            emptyCartInfo.classList.add('empty-cart-info-hidden');
 
             const emptyCartImg = document.createElement('img');
             emptyCartImg.src = './assets/images/illustration-empty-cart.svg';
@@ -185,6 +190,7 @@ function load() {
             emptyCartP.textContent = "Your itens will appear here"
 
             const productsAddedInfo = document.createElement('div');
+            productsAddedInfo.classList.add('products-added-info-visible'); //Mudar para hidden depois!
             
             const adddedProducts = document.createElement('div');
             adddedProducts.classList.add('added-products');
@@ -248,15 +254,41 @@ function load() {
 
             theCart.appendChild(cartTitle);
             cartTitle.appendChild(spanCartTitle);
-            theCart.appendChild(emptyCartInfo);
+
+            /*theCart.appendChild(emptyCartInfo);
             emptyCartInfo.appendChild(emptyCartImg);
-            emptyCartInfo.appendChild(emptyCartP);
+            emptyCartInfo.appendChild(emptyCartP);*/
 
-            
+            theCart.appendChild(productsAddedInfo);
+            productsAddedInfo.appendChild(adddedProducts);
+            adddedProducts.appendChild(products);
+            products.appendChild(productInfo);           
+            productInfo.appendChild(productName);
+            productInfo.appendChild(additionalInformation);
+            additionalInformation.appendChild(quantityInfo);
+            additionalInformation.appendChild(itemPrice);
+            additionalInformation.appendChild(quantityPrice);
+            products.appendChild(buttonRemoveFromCart);
+            buttonRemoveFromCart.appendChild(buttonRemoveFromCartImage);
+            products.appendChild(hr);
 
+            productsAddedInfo.appendChild(orderTotal);
+            orderTotal.appendChild(orderTotalP);
+            orderTotal.appendChild(orderTotalPrice);
 
+            productsAddedInfo.appendChild(toAlignMessage);
+            toAlignMessage.appendChild(messageDiv);
+            messageDiv.appendChild(messageImg);
+            messageDiv.appendChild(messageP);
+
+            productsAddedInfo.appendChild(toAlignConfirmOrder);
+            toAlignConfirmOrder.appendChild(confirmOrderButton);
 
             principal.appendChild(theCart);
+            
+            //colocar texto na messagem
+            //colocar texto no butão de confirmOrder!
+            //tem código lá em cima pra resolver ainda
 
         }).catch(error => {
             console.log('Error', error);

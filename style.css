@@ -188,7 +188,11 @@ h3 {
     font-family: var(--font1);
 }
 
-.products-added-info{
+.products-added-info-visible{
+    display: block;
+}
+
+.products-added-info.hidden{
     display: none;
 }
 
@@ -198,12 +202,16 @@ h3 {
     color: var(--Red);
 }
 
-.empty-cart-info{
-    display: flex;
+.empty-cart-info-visible{
+    display: none;
     align-items: center;
     justify-content: center;
     flex-flow: column wrap;
     padding: 15px;
+}
+
+.empty-cart-info-hidden{
+    display: none;
 }
 
 .empty-cart-p{
