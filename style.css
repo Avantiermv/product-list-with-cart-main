@@ -192,7 +192,7 @@ h3 {
     display: block;
 }
 
-.products-added-info.hidden{
+.products-added-info-hidden{
     display: none;
 }
 
@@ -203,7 +203,7 @@ h3 {
 }
 
 .empty-cart-info-visible{
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-flow: column wrap;
@@ -336,12 +336,16 @@ h3 {
     display: flex;
     align-items: center;
     padding: 10px;
+    padding-right: 35px;
+    padding-left: 35px;
     background-color: var(--Rose100);
     border-radius: 15px;
 }
 
 .message p{
     margin-left: 5px;
+    font-size: 14px;
+    font-family: var(--font1);
 }
 
 .to-align-confirm-order{

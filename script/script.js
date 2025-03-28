@@ -142,6 +142,8 @@ function load() {
                     console.log("O produto ", product.name, "foi adicionado");
                     console.log(totalPrice);
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
+                    orderTotalPrice.textContent = `$${totalPrice}`;
+                    addedToCartStyle();
                 }
 
                 function removeIten(product, numberIten){
@@ -155,17 +157,40 @@ function load() {
                             shoppingCar.splice(index, 1);
                             totalPrice -= product.price;
                         }
+
+                        if(currentValue == 0){
+                            removedFromCartStyle();
+                        }
                     }
                     console.log("O item ", product.name, "foi removido");
                     console.log(totalPrice);
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
+                    orderTotalPrice.textContent = `$${totalPrice}`;
                 }
                 //----------Fim das funções que somam um item ou retiram um item do carrinho----------// 
 
-                function uptadeCart(){
-                    emptyCartInfo.remove('empty-cart-info-visible');
-                    emptyCartInfo.add('empty-cart-info-hidden');
+
+                //----------Inicio das funções do carrinho----------// 
+                function addedToCartStyle(){
+                    emptyCartInfo.classList.remove('empty-cart-info-visible');
+                    emptyCartInfo.classList.add('empty-cart-info-hidden');
+                    productsAddedInfo.classList.remove('products-added-info-hidden');
+                    productsAddedInfo.classList.add('products-added-info-visible');
                 }
+
+                function removedFromCartStyle(){
+                    productsAddedInfo.classList.remove('products-added-info-visible');
+                    productsAddedInfo.classList.add('products-added-info-hidden');
+                    emptyCartInfo.classList.remove('empty-cart-info-hidden');
+                    emptyCartInfo.classList.add('empty-cart-info-visible');
+                }
+
+                function addedToCartIten(product){
+                    productName.textContent = product.name;
+                    quantityInfo.textContent = `${product.quantity}x`;
+                }
+
+                //----------Fim das funções do carrinho----------// 
 
             });
 
@@ -177,10 +202,10 @@ function load() {
             cartTitle.textContent = "Your cart ";
 
             const spanCartTitle = document.createElement('span'); //Está sendo atualizado dentro da função desserts.forEach!
-            spanCartTitle.textContent = "( 0 )"
+            spanCartTitle.textContent = "( 0 )";
 
             const emptyCartInfo = document.createElement('div');
-            emptyCartInfo.classList.add('empty-cart-info-hidden');
+            emptyCartInfo.classList.add('empty-cart-info-visible');
 
             const emptyCartImg = document.createElement('img');
             emptyCartImg.src = './assets/images/illustration-empty-cart.svg';
@@ -190,7 +215,7 @@ function load() {
             emptyCartP.textContent = "Your itens will appear here"
 
             const productsAddedInfo = document.createElement('div');
-            productsAddedInfo.classList.add('products-added-info-visible'); //Mudar para hidden depois!
+            productsAddedInfo.classList.add('products-added-info-hidden'); 
             
             const adddedProducts = document.createElement('div');
             adddedProducts.classList.add('added-products');
@@ -203,18 +228,22 @@ function load() {
 
             const productName = document.createElement('h1');
             productName.classList.add('product-name');
+            productName.textContent = "Rapaz";
 
             const additionalInformation = document.createElement('div');
             additionalInformation.classList.add('additional-information');
 
             const quantityInfo = document.createElement('p');
             quantityInfo.classList.add('quantity-info');
+            quantityInfo.textContent = "Rapaz n 1"
 
             const itemPrice = document.createElement('p');
             itemPrice.classList.add('item-price');
+            itemPrice.textContent = "Rapaz $1"
 
             const quantityPrice = document.createElement('p');
             quantityPrice.classList.add('quantity-price');
+            quantityPrice.textContent = "RApaz $1";
 
             const buttonRemoveFromCart = document.createElement('button');
             buttonRemoveFromCart.classList.add('button-remove-from-cart');
@@ -230,6 +259,7 @@ function load() {
 
             const orderTotalP = document.createElement('p');
             orderTotalP.classList.add('order-total-p');
+            orderTotalP.textContent = "Order Total";
 
             const orderTotalPrice = document.createElement('p');
             orderTotalPrice.classList.add('total-price');
@@ -245,19 +275,21 @@ function load() {
 
             const messageP = document.createElement('p');
             messageP.classList.add('carbon-neutral-paragraph');
+            messageP.innerHTML = "This is a <strong> carbon-neutral </strong> delivery";
 
             const toAlignConfirmOrder = document.createElement('div');
             toAlignConfirmOrder.classList.add('to-align-confirm-order');
 
             const confirmOrderButton = document.createElement('button');
             confirmOrderButton.classList.add('confirm-order');
+            confirmOrderButton.textContent = "Confirm Order";
 
             theCart.appendChild(cartTitle);
             cartTitle.appendChild(spanCartTitle);
 
-            /*theCart.appendChild(emptyCartInfo);
+            theCart.appendChild(emptyCartInfo);
             emptyCartInfo.appendChild(emptyCartImg);
-            emptyCartInfo.appendChild(emptyCartP);*/
+            emptyCartInfo.appendChild(emptyCartP);
 
             theCart.appendChild(productsAddedInfo);
             productsAddedInfo.appendChild(adddedProducts);
@@ -285,10 +317,6 @@ function load() {
             toAlignConfirmOrder.appendChild(confirmOrderButton);
 
             principal.appendChild(theCart);
-            
-            //colocar texto na messagem
-            //colocar texto no butão de confirmOrder!
-            //tem código lá em cima pra resolver ainda
 
         }).catch(error => {
             console.log('Error', error);
