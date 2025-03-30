@@ -8,6 +8,9 @@ function load() {
             let totalPrice = 0;
 
             desserts.forEach(dessert => {
+                const singleItemArray = [];
+                let totalPriceItem = 0;
+
                 const card = document.createElement("div");
                 card.classList.add("desserts-cards");
 
@@ -144,6 +147,7 @@ function load() {
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                     orderTotalPrice.textContent = `$${totalPrice}`;
                     addedToCartStyle();
+                    encapsulatorItemConditioned();
                 }
 
                 function removeIten(product, numberIten){
@@ -156,6 +160,7 @@ function load() {
                         if(index !== -1){
                             shoppingCar.splice(index, 1);
                             totalPrice -= product.price;
+                            encapsulatorItemRemoved();
                         }
 
                         if(currentValue == 0){
@@ -185,10 +190,43 @@ function load() {
                     emptyCartInfo.classList.add('empty-cart-info-visible');
                 }
 
-                function addedToCartIten(product){
-                    productName.textContent = product.name;
-                    quantityInfo.textContent = `${product.quantity}x`;
+                function encapsulatorItemConditioned(){
+                    addSingleItem(dessert, productName, quantityInfo, itemPrice, quantityPrice);
                 }
+
+                function encapsulatorItemRemoved(){
+                    removeSingleItem(dessert, quantityInfo);
+                }
+
+                function addSingleItem(product, productName, numberQuantity, itemPrice, quantityPrice){
+                    let currentValue = parseInt(numberQuantity.textContent, 10) || 0;
+                    currentValue++;
+                    numberQuantity.textContent = `${currentValue}x`;
+                    
+                    singleItemArray.push({name: product.name, price: product.price});
+                    totalPriceItem += product.price;
+
+                    productName.textContent = product.name;
+                    itemPrice.textContent = `@${product.price}`;
+                    quantityPrice.textContent = `$${totalPriceItem}`;
+                }
+
+                function removeSingleItem(product, numberQuantity){
+                    let currentValue = parseInt(numberQuantity.textContent, 10) || 0;
+                    if(currentValue > 0){
+                        currentValue--;
+                        numberQuantity.textContent = currentValue;
+
+                        const index = singleItemArray.findIndex(item => item.price === product.price);
+                        if(index !== -1){
+                            singleItemArray.splice(index, 1);
+                            totalPriceItem -= product.price;
+                        }
+                    }
+                }
+
+                //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
+                //talvez seja uma função
 
                 //----------Fim das funções do carrinho----------// 
 
