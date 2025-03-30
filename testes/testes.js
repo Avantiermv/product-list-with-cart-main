@@ -1,18 +1,17 @@
-theCart.appendChild(productsAddedInfo);
-productsAddedInfo.appendChild(adddedProducts);
-adddedProducts.appendChild(products);
-products.appendChild(productInfo);
-products.appendChild(buttonRemoveFromCart);
-buttonRemoveFromCart.appendChild(buttonRemoveFromCartImage);
-products.appendChild(hr);
+const produtos = [
+{
+    id: 1,
+    name: "cachorro",
+    price: 1,
+    quantity: 0,
+},
+{
+    id: 2,
+    name: "Gato",
+    price: 2,
+    quatity: 0,
+}
+];
 
-productsAddedInfo.appendChild(orderTotal);
-orderTotal.appendChild(orderTotalP);
-orderTotal.appendChild(orderTotalPrice);
+let quatidade = 0;
 
-productsAddedInfo.appendChild(toAlignMessage);
-toAlignMessage.appendChild(messageDiv);
-messageDiv.appendChild(messageImg);
-messageDiv.appendChild(messageP);
-
-productsAddedInfo.appendChild(confirmOrderButton);
