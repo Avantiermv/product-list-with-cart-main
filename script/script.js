@@ -202,6 +202,7 @@ function load() {
                     let currentValue = parseInt(numberQuantity.textContent, 10) || 0;
                     currentValue++;
                     numberQuantity.textContent = `${currentValue}x`;
+
                     
                     singleItemArray.push({name: product.name, price: product.price});
                     totalPriceItem += product.price;
@@ -210,6 +211,8 @@ function load() {
                     productName.textContent = product.name;
                     itemPrice.textContent = `@${product.price}`;
                     quantityPrice.textContent = `$${totalPriceItem}`;
+
+
                 }
 
                 function removeSingleItem(product, numberQuantity){
