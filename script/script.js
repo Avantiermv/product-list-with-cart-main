@@ -206,6 +206,7 @@ function load() {
                     singleItemArray.push({name: product.name, price: product.price});
                     totalPriceItem += product.price;
 
+
                     productName.textContent = product.name;
                     itemPrice.textContent = `@${product.price}`;
                     quantityPrice.textContent = `$${totalPriceItem}`;
@@ -224,6 +225,8 @@ function load() {
                         }
                     }
                 }
+
+                
 
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
