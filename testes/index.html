@@ -6,8 +6,8 @@
     <title>Document</title>
     <style>
         .azul{
-            width: 30px;
-            height: 40px;
+            width: 400px;
+            height: 400px;
             background-color: blue;
         }
 
@@ -28,9 +28,11 @@
 
     <script>
         const div = document.querySelector('.azul');
+        
         div.addEventListener('click', () => {
             const div2 = document.createElement('div');
             div2.classList.add('vermelho');
+            div.appendChild(div2);
         });
     </script>
 </body>
