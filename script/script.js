@@ -211,6 +211,8 @@ function load() {
                     itemPrice.textContent = `@${product.price}`;
                     quantityPrice.textContent = `$${totalPriceItem}`;
 
+                    criarDivParaProdutoAdicionado();
+
                 }
 
                 function removeSingleItem(product, numberQuantity){
@@ -225,6 +227,12 @@ function load() {
                             totalPriceItem -= product.price;
                         }
                     }
+                }
+
+                function criarDivParaProdutoAdicionado(){
+                    const div1 = document.createElement('div');
+                    div1.classList.add('products');
+                    adddedProducts.appendChild(div1);
                 }
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
