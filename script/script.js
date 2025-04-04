@@ -235,6 +235,49 @@ function load() {
                     
                     const div2 = document.createElement('div');
                     div2.classList.add('product-info');
+
+                    const h1 = document.createElement('h1');
+                    h1.classList.add('product-name');
+                    h1.textContent = "Rapaz preto";
+
+                    const div3 = document.createElement('div');
+                    div3.classList.add('additional-information');
+
+                    const p1 = document.createElement('p');
+                    p1.classList.add('qunatity-info');
+                    p1.textContent = "Rapaz n 2";
+
+                    const p2 = document.createElement('p');
+                    p2.classList.add('item-price');
+                    p2.textContent = "$.50";
+
+                    const p3 = document.createElement('p');
+                    p3.classList.add('qunatity-price');
+                    p3.textContent = "AHH $2";
+
+                    const buttonRemove = document.createElement('button');
+                    buttonRemove.classList.add('button-remove-from-cart');
+
+                    const imgButtonRemove = document.createElement('img');
+                    imgButtonRemove.src = './assets/images/icon-remove-item.svg'
+
+                    const hr = document.createElement('hr');
+                    hr.classList.add('hr');
+
+
+                    div.appendChild(div2);
+                    div2.appendChild(h1);
+                    div2.appendChild(div3);
+                    div3.appendChild(p1);
+                    div3.appendChild(p2);
+                    div3.appendChild(p3);
+                    
+                    div.appendChild(buttonRemove);
+                    buttonRemove.appendChild(imgButtonRemove);
+                    div.appendChild(hr);
+
+
+                    adddedProducts.appendChild(div);
                 }
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
@@ -261,7 +304,7 @@ function load() {
 
             const emptyCartP = document.createElement('p');
             emptyCartP.classList.add('empty-cart-p');
-            emptyCartP.textContent = "Your itens will appear here"
+            emptyCartP.textContent = "Your itens will appear here";
 
             const productsAddedInfo = document.createElement('div');
             productsAddedInfo.classList.add('products-added-info-hidden'); 
