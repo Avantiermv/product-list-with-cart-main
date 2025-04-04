@@ -230,9 +230,11 @@ function load() {
                 }
 
                 function criarDivParaProdutoAdicionado(){
-                    const div1 = document.createElement('div');
-                    div1.classList.add('products');
-                    adddedProducts.appendChild(div1);
+                    const div = document.createElement('div');
+                    div.classList.add('products');
+                    
+                    const div2 = document.createElement('div');
+                    div2.classList.add('product-info');
                 }
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
