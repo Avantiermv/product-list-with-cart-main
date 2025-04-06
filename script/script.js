@@ -206,7 +206,6 @@ function load() {
                     singleItemArray.push({name: product.name, price: product.price});
                     totalPriceItem += product.price;
 
-
                     productName.textContent = product.name;
                     itemPrice.textContent = `@${product.price}`;
                     quantityPrice.textContent = `$${totalPriceItem}`;
