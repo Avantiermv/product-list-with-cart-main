@@ -211,25 +211,6 @@ function load() {
                     itemPrice.textContent = `@${product.price}`;
                     quantityPrice.textContent = `$${totalPriceItem}`;
 
-                    criarDivParaProdutoAdicionado();
-
-                }
-
-                function removeSingleItem(product, numberQuantity){
-                    let currentValue = parseInt(numberQuantity.textContent, 10) || 0;
-                    if(currentValue > 0){
-                        currentValue--;
-                        numberQuantity.textContent = currentValue;
-
-                        const index = singleItemArray.findIndex(item => item.price === product.price);
-                        if(index !== -1){
-                            singleItemArray.splice(index, 1);
-                            totalPriceItem -= product.price;
-                        }
-                    }
-                }
-
-                function criarDivParaProdutoAdicionado(){
                     const div = document.createElement('div');
                     div.classList.add('products');
                     
@@ -238,22 +219,22 @@ function load() {
 
                     const h1 = document.createElement('h1');
                     h1.classList.add('product-name');
-                    h1.textContent = "Rapaz preto";
+                    h1.textContent = productName.textContent;
 
                     const div3 = document.createElement('div');
                     div3.classList.add('additional-information');
 
                     const p1 = document.createElement('p');
-                    p1.classList.add('qunatity-info');
-                    p1.textContent = "Rapaz n 2";
+                    p1.classList.add('quantity-info');
+                    p1.textContent = numberQuantity.textContent;
 
                     const p2 = document.createElement('p');
                     p2.classList.add('item-price');
-                    p2.textContent = "$.50";
+                    p2.textContent = itemPrice.textContent;
 
                     const p3 = document.createElement('p');
                     p3.classList.add('qunatity-price');
-                    p3.textContent = "AHH $2";
+                    p3.textContent = quantityPrice.textContent;
 
                     const buttonRemove = document.createElement('button');
                     buttonRemove.classList.add('button-remove-from-cart');
@@ -278,6 +259,25 @@ function load() {
 
 
                     adddedProducts.appendChild(div);
+
+                }
+
+                function removeSingleItem(product, numberQuantity){
+                    let currentValue = parseInt(numberQuantity.textContent, 10) || 0;
+                    if(currentValue > 0){
+                        currentValue--;
+                        numberQuantity.textContent = currentValue;
+
+                        const index = singleItemArray.findIndex(item => item.price === product.price);
+                        if(index !== -1){
+                            singleItemArray.splice(index, 1);
+                            totalPriceItem -= product.price;
+                        }
+                    }
+                }
+
+                function criarDivParaProdutoAdicionado(){
+                   
                 }
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
