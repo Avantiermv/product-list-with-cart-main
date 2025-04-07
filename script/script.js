@@ -274,10 +274,6 @@ function load() {
                         }
                     }
                 }
-
-                function criarDivParaProdutoAdicionado(){
-                   
-                }
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
 
