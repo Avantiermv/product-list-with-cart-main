@@ -244,11 +244,11 @@ function load() {
 
                  const quantityInfo = document.createElement('p');
                  quantityInfo.classList.add('quantity-info');
-                 quantityInfo.textContent = "Rapaz n 1"
+                 quantityInfo.textContent = "Rapaz n 1";
 
                  const itemPrice = document.createElement('p');
                  itemPrice.classList.add('item-price');
-                 itemPrice.textContent = "Rapaz $1"
+                 itemPrice.textContent = "Rapaz $1";
 
                  const quantityPrice = document.createElement('p');
                  quantityPrice.classList.add('quantity-price');
@@ -323,11 +323,11 @@ function load() {
 
             const quantityInfo = document.createElement('p');
             quantityInfo.classList.add('quantity-info');
-            quantityInfo.textContent = "Rapaz n 1"
+            quantityInfo.textContent = "Rapaz n 1";
 
             const itemPrice = document.createElement('p');
             itemPrice.classList.add('item-price');
-            itemPrice.textContent = "Rapaz $1"
+            itemPrice.textContent = "Rapaz $1";
 
             const quantityPrice = document.createElement('p');
             quantityPrice.classList.add('quantity-price');
