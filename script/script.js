@@ -210,55 +210,7 @@ function load() {
                     itemPrice.textContent = `@${product.price}`;
                     quantityPrice.textContent = `$${totalPriceItem}`;
 
-                    const div = document.createElement('div');
-                    div.classList.add('products');
-                    
-                    const div2 = document.createElement('div');
-                    div2.classList.add('product-info');
-
-                    const h1 = document.createElement('h1');
-                    h1.classList.add('product-name');
-                    h1.textContent = productName.textContent;
-
-                    const div3 = document.createElement('div');
-                    div3.classList.add('additional-information');
-
-                    const p1 = document.createElement('p');
-                    p1.classList.add('quantity-info');
-                    p1.textContent = numberQuantity.textContent;
-
-                    const p2 = document.createElement('p');
-                    p2.classList.add('item-price');
-                    p2.textContent = itemPrice.textContent;
-
-                    const p3 = document.createElement('p');
-                    p3.classList.add('qunatity-price');
-                    p3.textContent = quantityPrice.textContent;
-
-                    const buttonRemove = document.createElement('button');
-                    buttonRemove.classList.add('button-remove-from-cart');
-
-                    const imgButtonRemove = document.createElement('img');
-                    imgButtonRemove.src = './assets/images/icon-remove-item.svg'
-
-                    const hr = document.createElement('hr');
-                    hr.classList.add('hr');
-
-
-                    div.appendChild(div2);
-                    div2.appendChild(h1);
-                    div2.appendChild(div3);
-                    div3.appendChild(p1);
-                    div3.appendChild(p2);
-                    div3.appendChild(p3);
-                    
-                    div.appendChild(buttonRemove);
-                    buttonRemove.appendChild(imgButtonRemove);
-                    div.appendChild(hr);
-
-
-                    adddedProducts.appendChild(div);
-
+                    criadorDeDiv();
                 }
 
                 function removeSingleItem(product, numberQuantity){
@@ -273,6 +225,55 @@ function load() {
                             totalPriceItem -= product.price;
                         }
                     }
+                }
+
+                function criadorDeDiv(){ 
+                    
+                 const products = document.createElement('div');
+                 products.classList.add('products');
+
+                 const productInfo = document.createElement('div');
+                 productInfo.classList.add('product-info');
+
+                 const productName = document.createElement('h1');
+                 productName.classList.add('product-name');
+                 productName.textContent = "Rapaz";
+
+                 const additionalInformation = document.createElement('div');
+                 additionalInformation.classList.add('additional-information');
+
+                 const quantityInfo = document.createElement('p');
+                 quantityInfo.classList.add('quantity-info');
+                 quantityInfo.textContent = "Rapaz n 1"
+
+                 const itemPrice = document.createElement('p');
+                 itemPrice.classList.add('item-price');
+                 itemPrice.textContent = "Rapaz $1"
+
+                 const quantityPrice = document.createElement('p');
+                 quantityPrice.classList.add('quantity-price');
+                 quantityPrice.textContent = "RApaz $1";
+
+                 const buttonRemoveFromCart = document.createElement('button');
+                 buttonRemoveFromCart.classList.add('button-remove-from-cart');
+
+                 const buttonRemoveFromCartImage = document.createElement('img');
+                 buttonRemoveFromCartImage.src = './assets/images/icon-remove-item.svg';
+
+                 const hr = document.createElement('hr');
+                 hr.classList.add('hr');
+
+                 adddedProducts.appendChild(products);
+                 products.appendChild(productInfo);           
+                 productInfo.appendChild(productName);
+                 productInfo.appendChild(additionalInformation);
+                 additionalInformation.appendChild(quantityInfo);
+                 additionalInformation.appendChild(itemPrice);
+                 additionalInformation.appendChild(quantityPrice);
+                 products.appendChild(buttonRemoveFromCart);
+                 buttonRemoveFromCart.appendChild(buttonRemoveFromCartImage);
+                 products.appendChild(hr);
+
                 }
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
