@@ -1,38 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sobremesas</title>
     <style>
-        .azul{
-            width: 400px;
-            height: 400px;
-            background-color: blue;
-        }
-
-        .vermelho{
-            width: 10px;
-            height: 10px;
-            background-color: red;
-            margin: auto;
+        #quantidades div {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    
-
-    <div class="azul">
-        <!--<div class="vermelho"></div>-->
+    <div id="sobremesas">
+        <button data-sobremesa="Bolo">Bolo</button>
+        <button data-sobremesa="Sorvete">Sorvete</button>
+        <button data-sobremesa="Torta">Torta</button>
+        <button data-sobremesa="Pudim">Pudim</button>
+        <button data-sobremesa="Mousse">Mousse</button>
     </div>
 
+    <div id="quantidades"></div>
+
     <script>
-        const div = document.querySelector('.azul');
-        
-        div.addEventListener('click', () => {
-            const div2 = document.createElement('div');
-            div2.classList.add('vermelho');
-            div.appendChild(div2);
+        // Objeto para armazenar as quantidades
+        const quantidades = {};
+
+        // Seleciona todos os botões de sobremesa
+        const botoes = document.querySelectorAll('#sobremesas button');
+        const containerQuantidades = document.getElementById('quantidades');
+
+        botoes.forEach(botao => {
+            botao.addEventListener('click', () => {
+                const sobremesa = botao.getAttribute('data-sobremesa');
+
+                // Incrementa a quantidade ou inicializa como 1
+                if (quantidades[sobremesa]) {
+                    quantidades[sobremesa]++;
+                } else {
+                    quantidades[sobremesa] = 1;
+                }
+
+                // Atualiza ou cria a div correspondente
+                const divExistente = document.getElementById(`quantidade-${sobremesa}`);
+                if (divExistente) {
+                    divExistente.textContent = `${sobremesa}: ${quantidades[sobremesa]}`;
+                } else {
+                    const novaDiv = document.createElement('div');
+                    novaDiv.id = `quantidade-${sobremesa}`;
+                    novaDiv.textContent = `${sobremesa}: ${quantidades[sobremesa]}`;
+                    containerQuantidades.appendChild(novaDiv);
+                }
+            });
         });
     </script>
 </body>

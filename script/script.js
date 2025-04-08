@@ -6,6 +6,7 @@ function load() {
 
             const shoppingCar = []; //Meu array com todos os itens adicionados
             let totalPrice = 0;
+            const quantidades = {};
 
             desserts.forEach(dessert => {
                 const singleItemArray = [];
@@ -146,8 +147,20 @@ function load() {
                     console.log(totalPrice);
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                     orderTotalPrice.textContent = `$${totalPrice}`;
-                    addedToCartStyle();
-                    encapsulatorItemConditioned();
+                    
+                    if(quantidades[product.name]){
+                        quantidades[product.name]++;
+                    }else{
+                        quantidades[product.name] = 1;
+                    }
+
+                    console.log("Quantidades individuais:");
+                    for (const [nome, quantidade] of Object.entries(quantidades)) {
+                            console.log(`${nome}: ${quantidade}`);
+                     }
+
+                     addedToCartStyle();
+
                 }
 
                 function removeIten(product, numberIten){
@@ -166,6 +179,17 @@ function load() {
                         if(currentValue == 0){
                             removedFromCartStyle();
                         }
+
+                        if(quantidades[product.name]){
+                            quantidades[product.name]--;
+                        }else{
+                            quantidades[product.name] = 0;
+                        }
+    
+                        console.log("Quantidades individuais:");
+                        for (const [nome, quantidade] of Object.entries(quantidades)) {
+                                console.log(`${nome}: ${quantidade}`);
+                         }
                     }
                     console.log("O item ", product.name, "foi removido");
                     console.log(totalPrice);
@@ -190,91 +214,6 @@ function load() {
                     emptyCartInfo.classList.add('empty-cart-info-visible');
                 }
 
-                function encapsulatorItemConditioned(){
-                    addSingleItem(dessert, productName, quantityInfo, itemPrice, quantityPrice);
-                }
-
-                function encapsulatorItemRemoved(){
-                    removeSingleItem(dessert, quantityInfo);
-                }
-
-                function addSingleItem(product, productName, numberQuantity, itemPrice, quantityPrice){
-                    let currentValue = parseInt(numberQuantity.textContent, 10) || 0;
-                    currentValue++;
-                    numberQuantity.textContent = `${currentValue}x`;
-                    
-                    singleItemArray.push({name: product.name, price: product.price});
-                    totalPriceItem += product.price;
-
-                    productName.textContent = product.name;
-                    itemPrice.textContent = `@${product.price}`;
-                    quantityPrice.textContent = `$${totalPriceItem}`;
-
-                    criadorDeDiv();
-                }
-
-                function removeSingleItem(product, numberQuantity){
-                    let currentValue = parseInt(numberQuantity.textContent, 10) || 0;
-                    if(currentValue > 0){
-                        currentValue--;
-                        numberQuantity.textContent = currentValue;
-
-                        const index = singleItemArray.findIndex(item => item.price === product.price);
-                        if(index !== -1){
-                            singleItemArray.splice(index, 1);
-                            totalPriceItem -= product.price;
-                        }
-                    }
-                }
-
-                function criadorDeDiv(){ 
-                    
-                 const products = document.createElement('div');
-                 products.classList.add('products');
-
-                 const productInfo = document.createElement('div');
-                 productInfo.classList.add('product-info');
-
-                 const productName = document.createElement('h1');
-                 productName.classList.add('product-name');
-                 productName.textContent = "Rapaz";
-
-                 const additionalInformation = document.createElement('div');
-                 additionalInformation.classList.add('additional-information');
-
-                 const quantityInfo = document.createElement('p');
-                 quantityInfo.classList.add('quantity-info');
-                 quantityInfo.textContent = "Rapaz n 1";
-
-                 const itemPrice = document.createElement('p');
-                 itemPrice.classList.add('item-price');
-                 itemPrice.textContent = "Rapaz $1";
-
-                 const quantityPrice = document.createElement('p');
-                 quantityPrice.classList.add('quantity-price');
-                 quantityPrice.textContent = "RApaz $1";
-
-                 const buttonRemoveFromCart = document.createElement('button');
-                 buttonRemoveFromCart.classList.add('button-remove-from-cart');
-
-                 const buttonRemoveFromCartImage = document.createElement('img');
-                 buttonRemoveFromCartImage.src = './assets/images/icon-remove-item.svg';
-
-                 const hr = document.createElement('hr');
-                 hr.classList.add('hr');
-
-                 adddedProducts.appendChild(products);
-                 products.appendChild(productInfo);           
-                 productInfo.appendChild(productName);
-                 productInfo.appendChild(additionalInformation);
-                 additionalInformation.appendChild(quantityInfo);
-                 additionalInformation.appendChild(itemPrice);
-                 additionalInformation.appendChild(quantityPrice);
-                 products.appendChild(buttonRemoveFromCart);
-                 buttonRemoveFromCart.appendChild(buttonRemoveFromCartImage);
-                 products.appendChild(hr);
-
-                }
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
                 //talvez seja uma função
 
