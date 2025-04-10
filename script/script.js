@@ -154,7 +154,7 @@ function load() {
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                     orderTotalPrice.textContent = `$${totalPrice}`;
                     addedToCartStyle();
-                    adicionarDiv(product, quantityInfo, itemPrice, quantityPrice);
+                    dinamicDiv(product, quantityInfo, itemPrice, quantityPrice);
                 }
 
                 function removeIten(product, numberIten){
@@ -171,6 +171,7 @@ function load() {
 
                             quantityInfo.textContent = `${numberIten.textContent}x`;
                             quantityPrice.textContent = `$${totalItemPrice}`;
+                            dinamicDiv(product, quantityInfo, itemPrice, quantityPrice);
                         }
 
                         if(currentValue == 0){
@@ -182,6 +183,7 @@ function load() {
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                     orderTotalPrice.textContent = `$${totalPrice}`;
                 }
+
                 //----------Fim das funções que somam um item ou retiram um item do carrinho----------// 
 
 
@@ -202,7 +204,7 @@ function load() {
 
                 
 
-                function adicionarDiv(product, quantityInf, itemP, quantityP){
+                function dinamicDiv(product, quantityInf, itemP, quantityP){
 
                     const existingProduct = document.querySelector(`.products[data-name="${product.name}"]`);
 
@@ -236,8 +238,8 @@ function load() {
                         const buttonRemoveFromCart = document.createElement('button');
                         buttonRemoveFromCart.classList.add('button-remove-from-cart');
                         buttonRemoveFromCart.addEventListener('click', () => {
-                            alert('rapaz!')
-                        })
+                           alert("alfesjnd")
+                        });
 
                         const buttonRemoveFromCartImage = document.createElement('img');
                         buttonRemoveFromCartImage.src = './assets/images/icon-remove-item.svg';
