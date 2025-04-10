@@ -142,25 +142,19 @@ function load() {
                     shoppingCar.push({name: product.name, price: product.price});
                     totalPrice += product.price;
 
-                    
+                    const totalItemPrice = product.price * currentValue;
+
+                    productName.textContent = `${product.name}`;
+                    quantityInfo.textContent = `${numberIten.textContent}x`;
+                    itemPrice.textContent = `@$${product.price}`;
+                    quantityPrice.textContent = `$${totalItemPrice}`;
+
                     console.log("O produto ", product.name, "foi adicionado");
                     console.log(totalPrice);
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                     orderTotalPrice.textContent = `$${totalPrice}`;
-                    
-                    if(quantidades[product.name]){
-                        quantidades[product.name]++;
-                    }else{
-                        quantidades[product.name] = 1;
-                    }
-
-                    console.log("Quantidades individuais:");
-                    for (const [nome, quantidade] of Object.entries(quantidades)) {
-                            console.log(`${nome}: ${quantidade}`);
-                     }
-
-                     addedToCartStyle();
-
+                    addedToCartStyle();
+                    adicionarDiv(product, quantityInfo, itemPrice, quantityPrice);
                 }
 
                 function removeIten(product, numberIten){
@@ -173,23 +167,15 @@ function load() {
                         if(index !== -1){
                             shoppingCar.splice(index, 1);
                             totalPrice -= product.price;
-                            encapsulatorItemRemoved();
+                            const totalItemPrice = product.price * currentValue;
+
+                            quantityInfo.textContent = `${numberIten.textContent}x`;
+                            quantityPrice.textContent = `$${totalItemPrice}`;
                         }
 
                         if(currentValue == 0){
                             removedFromCartStyle();
                         }
-
-                        if(quantidades[product.name]){
-                            quantidades[product.name]--;
-                        }else{
-                            quantidades[product.name] = 0;
-                        }
-    
-                        console.log("Quantidades individuais:");
-                        for (const [nome, quantidade] of Object.entries(quantidades)) {
-                                console.log(`${nome}: ${quantidade}`);
-                         }
                     }
                     console.log("O item ", product.name, "foi removido");
                     console.log(totalPrice);
@@ -212,6 +198,84 @@ function load() {
                     productsAddedInfo.classList.add('products-added-info-hidden');
                     emptyCartInfo.classList.remove('empty-cart-info-hidden');
                     emptyCartInfo.classList.add('empty-cart-info-visible');
+                }
+
+                
+
+                function adicionarDiv(product, quantityInf, itemP, quantityP){
+
+                    const existingProduct = document.querySelector(`.products[data-name="${product.name}"]`);
+
+                    if(!existingProduct){
+                        const products = document.createElement('div');
+                        products.classList.add('products');
+                        products.setAttribute('data-name', product.name);
+
+                        const productInfo = document.createElement('div');
+                        productInfo.classList.add('product-info');
+
+                        const productName = document.createElement('h1');
+                        productName.classList.add('product-name');
+                        productName.textContent = product.name;
+
+                        const additionalInformation = document.createElement('div');
+                        additionalInformation.classList.add('additional-information');
+
+                        const quantityInfo = document.createElement('p');
+                        quantityInfo.classList.add('quantity-info');
+                        quantityInfo.textContent = quantityInf.textContent;
+
+                        const itemPrice = document.createElement('p');
+                        itemPrice.classList.add('item-price');
+                        itemPrice.textContent = itemP.textContent;
+
+                        const quantityPrice = document.createElement('p');
+                        quantityPrice.classList.add('quantity-price');
+                        quantityPrice.textContent = quantityP.textContent;
+
+                        const buttonRemoveFromCart = document.createElement('button');
+                        buttonRemoveFromCart.classList.add('button-remove-from-cart');
+                        buttonRemoveFromCart.addEventListener('click', () => {
+                            alert('rapaz!')
+                        })
+
+                        const buttonRemoveFromCartImage = document.createElement('img');
+                        buttonRemoveFromCartImage.src = './assets/images/icon-remove-item.svg';
+
+                        const hr = document.createElement('hr');
+                        hr.classList.add('hr');
+
+                        adddedProducts.appendChild(products);
+                        products.appendChild(productInfo);           
+                        productInfo.appendChild(productName);
+                        productInfo.appendChild(additionalInformation);
+                        additionalInformation.appendChild(quantityInfo);
+                        additionalInformation.appendChild(itemPrice);
+                        additionalInformation.appendChild(quantityPrice);
+                        products.appendChild(buttonRemoveFromCart);
+                        buttonRemoveFromCart.appendChild(buttonRemoveFromCartImage);
+                        products.appendChild(hr);
+                    } else {
+                        const existingProductQuantityInfo = existingProduct.querySelector('.quantity-info');
+                        const existingProductsQuantityPrice = existingProduct.querySelector('.quantity-price');
+
+                        existingProductQuantityInfo.textContent = quantityInf.textContent;
+                        existingProductsQuantityPrice.textContent = quantityP.textContent;
+                    }
+
+
+
+
+                    if(quantidades[product.name]){
+                        quantidades[product.name]++;
+                    }else{
+                        quantidades[product.name] = 1;
+                    }
+
+                    console.log("Quantidades individuais:");
+                    for (const [nome, quantidade] of Object.entries(quantidades)) {
+                        console.log(`${nome}: ${quantidade}`);
+                    }
                 }
 
                 //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
@@ -270,7 +334,7 @@ function load() {
 
             const quantityPrice = document.createElement('p');
             quantityPrice.classList.add('quantity-price');
-            quantityPrice.textContent = "RApaz $1";
+            quantityPrice.textContent = "Rapaz $1";
 
             const buttonRemoveFromCart = document.createElement('button');
             buttonRemoveFromCart.classList.add('button-remove-from-cart');
