@@ -174,7 +174,7 @@ function load() {
                             dinamicDiv(product, quantityInfo, itemPrice, quantityPrice);
                         }
 
-                        if(currentValue == 0){
+                        if(currentValue == 0 && shoppingCar.length == 0){
                             removedFromCartStyle();
                         }
                     }
@@ -237,9 +237,7 @@ function load() {
 
                         const buttonRemoveFromCart = document.createElement('button');
                         buttonRemoveFromCart.classList.add('button-remove-from-cart');
-                        buttonRemoveFromCart.addEventListener('click', () => {
-                           alert("alfesjnd")
-                        });
+                        buttonRemoveFromCart.addEventListener('click', remove);
 
                         const buttonRemoveFromCartImage = document.createElement('img');
                         buttonRemoveFromCartImage.src = './assets/images/icon-remove-item.svg';
@@ -263,20 +261,6 @@ function load() {
 
                         existingProductQuantityInfo.textContent = quantityInf.textContent;
                         existingProductsQuantityPrice.textContent = quantityP.textContent;
-                    }
-
-
-
-
-                    if(quantidades[product.name]){
-                        quantidades[product.name]++;
-                    }else{
-                        quantidades[product.name] = 1;
-                    }
-
-                    console.log("Quantidades individuais:");
-                    for (const [nome, quantidade] of Object.entries(quantidades)) {
-                        console.log(`${nome}: ${quantidade}`);
                     }
                 }
 
@@ -386,16 +370,7 @@ function load() {
 
             theCart.appendChild(productsAddedInfo);
             productsAddedInfo.appendChild(adddedProducts);
-            adddedProducts.appendChild(products);
-            products.appendChild(productInfo);           
-            productInfo.appendChild(productName);
-            productInfo.appendChild(additionalInformation);
-            additionalInformation.appendChild(quantityInfo);
-            additionalInformation.appendChild(itemPrice);
-            additionalInformation.appendChild(quantityPrice);
-            products.appendChild(buttonRemoveFromCart);
-            buttonRemoveFromCart.appendChild(buttonRemoveFromCartImage);
-            products.appendChild(hr);
+            
 
             productsAddedInfo.appendChild(orderTotal);
             orderTotal.appendChild(orderTotalP);
