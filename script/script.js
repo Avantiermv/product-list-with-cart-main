@@ -141,7 +141,7 @@ function load() {
 
                     shoppingCar.push({name: product.name, price: product.price});
                     totalPrice += product.price;
-
+                    
                     const totalItemPrice = product.price * currentValue;
 
                     productName.textContent = `${product.name}`;
@@ -183,26 +183,6 @@ function load() {
                     spanCartTitle.textContent = `( ${shoppingCar.length} )`;
                     orderTotalPrice.textContent = `$${totalPrice}`;
                 }
-
-                //----------Fim das funções que somam um item ou retiram um item do carrinho----------// 
-
-
-                //----------Inicio das funções do carrinho----------// 
-                function addedToCartStyle(){
-                    emptyCartInfo.classList.remove('empty-cart-info-visible');
-                    emptyCartInfo.classList.add('empty-cart-info-hidden');
-                    productsAddedInfo.classList.remove('products-added-info-hidden');
-                    productsAddedInfo.classList.add('products-added-info-visible');
-                }
-
-                function removedFromCartStyle(){
-                    productsAddedInfo.classList.remove('products-added-info-visible');
-                    productsAddedInfo.classList.add('products-added-info-hidden');
-                    emptyCartInfo.classList.remove('empty-cart-info-hidden');
-                    emptyCartInfo.classList.add('empty-cart-info-visible');
-                }
-
-                
 
                 function dinamicDiv(product, quantityInf, itemP, quantityP){
 
@@ -263,10 +243,23 @@ function load() {
                         existingProductsQuantityPrice.textContent = quantityP.textContent;
                     }
                 }
+                //----------Fim das funções que somam um item ou retiram um item do carrinho----------// 
 
-                //Ainda falta criar uma div para cada dessert pra aparecer na carrinho
-                //talvez seja uma função
 
+                //----------Inicio das funções do carrinho----------// 
+                function addedToCartStyle(){
+                    emptyCartInfo.classList.remove('empty-cart-info-visible');
+                    emptyCartInfo.classList.add('empty-cart-info-hidden');
+                    productsAddedInfo.classList.remove('products-added-info-hidden');
+                    productsAddedInfo.classList.add('products-added-info-visible');
+                }
+
+                function removedFromCartStyle(){
+                    productsAddedInfo.classList.remove('products-added-info-visible');
+                    productsAddedInfo.classList.add('products-added-info-hidden');
+                    emptyCartInfo.classList.remove('empty-cart-info-hidden');
+                    emptyCartInfo.classList.add('empty-cart-info-visible');
+                }
                 //----------Fim das funções do carrinho----------// 
 
             });
