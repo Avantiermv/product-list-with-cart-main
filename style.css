@@ -373,6 +373,15 @@ h3 {
     transition: 0.5s;
 }
 
+.confirmed-order{
+    position: sticky;
+    display: none;
+    top: 20px;
+    width: 350px;
+    height: 600px;
+    background-color: red;
+}
+
 
 
 

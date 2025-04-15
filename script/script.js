@@ -221,7 +221,7 @@ function load() {
 
                         const buttonRemoveFromCartImage = document.createElement('img');
                         buttonRemoveFromCartImage.src = './assets/images/icon-remove-item.svg';
-
+                        
                         const hr = document.createElement('hr');
                         hr.classList.add('hr');
 
@@ -263,6 +263,10 @@ function load() {
                 //----------Fim das funções do carrinho----------// 
 
             });
+
+            function confirmedOrder(){
+                
+            }
 
             const theCart = document.createElement('div');
             theCart.classList.add('the-cart');
@@ -353,6 +357,7 @@ function load() {
             const confirmOrderButton = document.createElement('button');
             confirmOrderButton.classList.add('confirm-order');
             confirmOrderButton.textContent = "Confirm Order";
+            confirmOrderButton.addEventListener('click', confirmedOrder);
 
             theCart.appendChild(cartTitle);
             cartTitle.appendChild(spanCartTitle);
