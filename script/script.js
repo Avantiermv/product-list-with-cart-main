@@ -3,10 +3,10 @@ function load() {
         .then(response => response.json()) // o response, pega os dados que o fetch acessou por meio de requisição e depois é coonvertido para algo usável no JS
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
             const principal = document.querySelector('#desserts-container');
+            const startNewOrder = document.querySelector('.startNewOrder');
 
             const shoppingCar = []; //Meu array com todos os itens adicionados
             let totalPrice = 0;
-            const quantidades = {};
 
             desserts.forEach(dessert => {
                 const singleItemArray = [];
@@ -260,12 +260,17 @@ function load() {
                     emptyCartInfo.classList.remove('empty-cart-info-hidden');
                     emptyCartInfo.classList.add('empty-cart-info-visible');
                 }
+
+                function confirmedOrder(){
+                
+                }
+
                 //----------Fim das funções do carrinho----------// 
 
             });
 
-            function confirmedOrder(){
-                
+            function startNewOrder(){
+                alert("sfisd")
             }
 
             const theCart = document.createElement('div');
@@ -369,7 +374,6 @@ function load() {
             theCart.appendChild(productsAddedInfo);
             productsAddedInfo.appendChild(adddedProducts);
             
-
             productsAddedInfo.appendChild(orderTotal);
             orderTotal.appendChild(orderTotalP);
             orderTotal.appendChild(orderTotalPrice);
@@ -383,6 +387,9 @@ function load() {
             toAlignConfirmOrder.appendChild(confirmOrderButton);
 
             principal.appendChild(theCart);
+
+
+
 
         }).catch(error => {
             console.log('Error', error);

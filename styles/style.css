@@ -373,7 +373,7 @@ h3 {
     transition: 0.5s;
 }
 
-.confirmed-order{
+.startNewOrder{
     width: 370px;
     height: 100%;
     margin: auto;
