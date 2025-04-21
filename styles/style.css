@@ -378,7 +378,9 @@ h3 {
     height: 100%;
     margin: auto;
     margin-top: 20px;
-    background-color: red;
+    background-color: var(--Rose50);
+    font-family: var(--font1);
+    border-radius: 15px;
 }
 
 .check-img img{
@@ -414,7 +416,7 @@ h3 {
     height: 100%;
     border-radius: 10px;
     margin-top: 10px;
-    background-color: var(--Rose300);
+    background-color: var(--Rose100);
 }
 
 .products-bought-info{
@@ -434,7 +436,29 @@ h3 {
 .quantity-priceitem{
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
+
+.quantity-info-div-new-order{
+    margin-right: 25px;
+    margin-top: 10px;
+    color: var(--Red);
+    font-weight: bold;
+}
+
+.quantity-price-div-new-order{
+    margin-right: 25px;
+    margin-top: 10px;
+    color: var(--Rose500);
+    font-weight: 600;
+}
+
+.total-price-peritem{
+    color: var(--Rose900);
+    font-weight: bold;
+}
+
 
 
 /*DESKTOP* (1440px) */

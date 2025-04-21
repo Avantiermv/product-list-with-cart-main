@@ -264,14 +264,9 @@ function load() {
                 function confirmedOrder(){
                 
                 }
-
                 //----------Fim das funções do carrinho----------// 
 
             });
-
-            function startNewOrder(){
-                alert("sfisd")
-            }
 
             const theCart = document.createElement('div');
             theCart.classList.add('the-cart');
@@ -388,7 +383,12 @@ function load() {
 
             principal.appendChild(theCart);
 
+            startNewOrder.appendChild();
 
+             //Necessário criar mais consts para estilizar a mensagem de compra finalizada
+             //Necessário criar uma função para adicionar as sobremessas e suas respectivas quantidades
+             //Necessário criar uma função para confirmed order e start new order
+             
 
 
         }).catch(error => {
