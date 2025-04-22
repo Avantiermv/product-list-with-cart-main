@@ -386,6 +386,25 @@ function load() {
             startNewOrder.appendChild();
 
              //Necessário criar mais consts para estilizar a mensagem de compra finalizada
+             //StartNewOrder já está criado
+
+             /*
+             
+             div chech-img
+             img
+             h1 h1-order-confirmed
+             p1 p1-order-confirmed
+
+             div content
+             div products-bought
+             div products-bought-info
+             div thumbnail
+
+             div
+
+             
+             */
+
              //Necessário criar uma função para adicionar as sobremessas e suas respectivas quantidades
              //Necessário criar uma função para confirmed order e start new order
              
