@@ -399,8 +399,22 @@ function load() {
              div products-bought
              div products-bought-info
              div thumbnail
+             img thumbnail
 
-             div
+             div price and quantity
+             p nameitem
+             div quantity priceitem
+             p quantity info
+             p quantity price
+
+             div totalpriceitem
+             p totalpriceperitem
+
+             hr hr
+
+             button confirm-order
+
+             agora é só colocar no js em forma de código e dentro de uma função
 
              
              */
