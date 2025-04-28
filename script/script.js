@@ -389,7 +389,6 @@ function load() {
              //StartNewOrder já está criado
 
              /*
-             
              div chech-img
              img
              h1 h1-order-confirmed
@@ -415,12 +414,16 @@ function load() {
              button confirm-order
 
              agora é só colocar no js em forma de código e dentro de uma função
-
-             
              */
 
              //Necessário criar uma função para adicionar as sobremessas e suas respectivas quantidades
              //Necessário criar uma função para confirmed order e start new order
+
+             const checkImg = document.createElement('div');
+             checkImg.classList.add('check-img');
+
+             const imgCheck = document.createElement('img');
+             
              
 
 
