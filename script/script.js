@@ -389,29 +389,29 @@ function load() {
              //StartNewOrder já está criado
 
              /*
-             div chech-img
-             img
-             h1 h1-order-confirmed
-             p1 p1-order-confirmed
+                div chech-img
+                  img
+                h1 h1-order-confirmed
+                p1 p1-order-confirmed
 
-             div content
-             div products-bought
-             div products-bought-info
-             div thumbnail
-             img thumbnail
+                div content
+                  div products-bought
+                    div products-bought-info
+                      div thumbnail
+                      img thumbnail
 
-             div price and quantity
-             p nameitem
-             div quantity priceitem
-             p quantity info
-             p quantity price
+                      div price and quantity
+                        p nameitem
+                        div quantity priceitem
+                          p quantity info
+                          p quantity price
 
-             div totalpriceitem
-             p totalpriceperitem
+                      div totalpriceitem
+                      p totalpriceperitem
 
-             hr hr
+                      hr hr
 
-             button confirm-order
+                  button confirm-order
 
              agora é só colocar no js em forma de código e dentro de uma função
              */
@@ -424,6 +424,42 @@ function load() {
 
              const imgCheck = document.createElement('img');
              
+             const h1 = document.createElement('h1');
+             h1.classList.add('h1-order-confirmed');
+
+             const p1 = document.createElement('p1');
+             p1.classList.add('p1-order-confirmed');
+
+             const divContent = createElement('div');
+             divContent.classList.add('content');
+
+             const divProductsBoght = document.createElement('div');
+             divProductsBoght.classList.add('products-bought');
+
+             const divProductsBoghtInfo = document.createElement('div');
+             divProductsBoghtInfo.classList.add('products-bought-info');
+
+             const divThumbnail = document.createElement('div');
+             divThumbnail.classList.add('img-thumbnail');
+
+             const imgThumbnail = document.createElement('img');
+
+             const divPriceAndQuantity = document.createElement('div');
+             divPriceAndQuantity.classList.add('name-price-quantity-itens');
+
+             const p1NameItem = document.createElement('p');
+             p1NameItem.classList.add('nameitem');
+
+             const divQuantityPriceItem = document.createElement('div');
+             divQuantityPriceItem.classList.add('quantity-priceitem');
+
+             const pQuantityInfo = document.createElement('P');
+             pQuantityInfo.classList.add('quantity-info-div-new-order');
+
+             const pQuantityPrice = document.createElement('p');
+             pQuantityPrice.classList.add('quantity-price-div-new-order');
+
+             //continua aqui...
              
 
 
