@@ -459,6 +459,12 @@ function load() {
              const pQuantityPrice = document.createElement('p');
              pQuantityPrice.classList.add('quantity-price-div-new-order');
 
+             const divTotalPriceItem = document.createElement('div');
+             divTotalPriceItem.classList.add('total-price-peritem-div');
+
+             const pTotalPriceItem = document.createElement('p');
+             pTotalPriceItem.classList.add('total-price-peritem');
+
              //continua aqui...
              
 
