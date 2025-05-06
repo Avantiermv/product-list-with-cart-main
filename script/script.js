@@ -1,4 +1,4 @@
-function load() {
+8function load() {
     fetch('./script/data.json') //Por meio de requisição está acessando os dados do arquivo data.json
         .then(response => response.json()) // o response, pega os dados que o fetch acessou por meio de requisição e depois é coonvertido para algo usável no JS
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
@@ -465,7 +465,7 @@ function load() {
              const pTotalPriceItem = document.createElement('p');
              pTotalPriceItem.classList.add('total-price-peritem');
 
-             //continua aqui...
+             //continua aqui.....
              
 
 
