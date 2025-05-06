@@ -1,0 +1,9 @@
+Eu coloquei um, display: none; no arquivo style.css na classe, .principal!!!
+
+Eu preciso criar uma função que "limpe" a tela e que mostre nela a janela de pedido feito com sucesso.
+Essa janela precisa ter todos os pedidos que eu adicionei no carrinho.
+Na mesma janela eu preciso ter uma função para o botão de iniciar outro pedido.
+
+Quando tudo estiver finalizado é necessário alinhar estilo para outras telas!!
+
+
