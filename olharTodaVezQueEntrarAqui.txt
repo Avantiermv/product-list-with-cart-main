@@ -1,9 +1,8 @@
-Eu coloquei um, display: none; no arquivo style.css na classe, .principal!!!
+Removi o display: none; de .principal no arquivo style.css!
 
-Eu preciso criar uma função que "limpe" a tela e que mostre nela a janela de pedido feito com sucesso.
-Essa janela precisa ter todos os pedidos que eu adicionei no carrinho.
-Na mesma janela eu preciso ter uma função para o botão de iniciar outro pedido.
+Agora, no script.js existe uma função que está relacionada ao botão de confirm order onde essa função esconde a div principal e no lugar dela aparece a div de iniciar nova ordem. 
 
-Quando tudo estiver finalizado é necessário alinhar estilo para outras telas!!
+Preciso criar uma nova div pra encapsular as sobremessas no html e adicionar isso no javascript também.
+
 
 
