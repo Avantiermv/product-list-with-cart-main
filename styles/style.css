@@ -24,9 +24,8 @@
 /*MOBILE FIRST (375px) */
 
 .principal {
-    display: none;
-    flex-flow: column;
-    flex-wrap: wrap;
+    display: flex;
+    flex-flow: wrap column;
     justify-content: center;
     align-items: center;
 }
@@ -459,6 +458,21 @@ h3 {
     font-weight: bold;
 }
 
+.hidden{
+    display: none;
+}
 
 
 /*DESKTOP* (1440px) */
+@media screen and (min-width: 700px){
+
+    .principal{
+        max-width: 650px;
+        margin: auto;
+        flex-flow: wrap row;
+    }
+
+
+
+
+}

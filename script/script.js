@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
             const principal = document.querySelector('#desserts-container');
             const startNewOrder = document.querySelector('.startNewOrder');
+            startNewOrder.classList.remove('startNewOrder');
+            startNewOrder.classList.add('hidden');
 
             const shoppingCar = []; //Meu array com todos os itens adicionados
             let totalPrice = 0;
@@ -260,11 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     emptyCartInfo.classList.remove('empty-cart-info-hidden');
                     emptyCartInfo.classList.add('empty-cart-info-visible');
                 }
-
-                //É necessário criar uma função para a confirmação do pedido bem aqui!
-
                 //----------Fim das funções do carrinho----------// 
-
             });
 
             //----------Inicio da criação do carrinho----------// 
@@ -357,8 +355,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const confirmOrderButton = document.createElement('button');
             confirmOrderButton.classList.add('confirm-order');
             confirmOrderButton.textContent = "Confirm Order";
+            confirmOrderButton.addEventListener('click', () => {
+                principal.classList.remove('principal');
+                principal.classList.add('hidden');
+                startNewOrder.classList.remove('hidden');
+                startNewOrder.classList.add('startNewOrder');
+            });
             
-
+            
             theCart.appendChild(cartTitle);
             cartTitle.appendChild(spanCartTitle);
 
@@ -384,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
             principal.appendChild(theCart);
             //----------Fim da criação do carrinho----------// 
 
-            //----------Inicio da criação dos itens de "Start New Order----------// 
+            //----------Inicio da criação dos itens de "Start New Order"----------// 
             const checkImg = document.createElement('div');
             checkImg.classList.add('check-img');
 
@@ -462,7 +466,7 @@ document.addEventListener('DOMContentLoaded', () => {
             divProductsBoghtInfo.appendChild(hrOfStartNewOrder);
 
             divContent.appendChild(buttonOfStartNewOrder);
-            //----------Fim da criação dos itens de "Start New Order----------// 
+            //----------Fim da criação dos itens de "Start New Order"----------// 
 
 
         }).catch(error => {
