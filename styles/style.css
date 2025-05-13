@@ -465,14 +465,12 @@ h3 {
 
 /*DESKTOP* (1440px) */
 @media screen and (min-width: 700px){
-
     .principal{
-        max-width: 650px;
-        margin: auto;
         flex-flow: wrap row;
+        justify-content: space-evenly;
     }
 
-
-
-
+    .desserts-content{
+        
+    }
 }

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json()) // o response, pega os dados que o fetch acessou por meio de requisição e depois é coonvertido para algo usável no JS
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
             const principal = document.querySelector('#desserts-container');
+            const divToTheDesserts = document.querySelector('.desserts-content');
             const startNewOrder = document.querySelector('.startNewOrder');
             startNewOrder.classList.remove('startNewOrder');
             startNewOrder.classList.add('hidden');
@@ -91,7 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.appendChild(divButton);
                 card.appendChild(divalignplusminus);
                 card.appendChild(textContent);
-                principal.appendChild(card);
+                divToTheDesserts.appendChild(card);
+                principal.appendChild(divToTheDesserts);
 
                 divalignplusminus.style.display = 'none';
                 

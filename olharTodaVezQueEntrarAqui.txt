@@ -1,5 +1,3 @@
-Removi o display: none; de .principal no arquivo style.css!
-
 Agora, no script.js existe uma função que está relacionada ao botão de confirm order onde essa função esconde a div principal e no lugar dela aparece a div de iniciar nova ordem. 
 
 Preciso criar uma nova div pra encapsular as sobremessas no html e adicionar isso no javascript também.
