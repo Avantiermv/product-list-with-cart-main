@@ -1,6 +1,9 @@
-Agora, no script.js existe uma função que está relacionada ao botão de confirm order onde essa função esconde a div principal e no lugar dela aparece a div de iniciar nova ordem. 
+Eu tirei umas linhas inuteis do html, eram relacionadas ao the-cart. Removi elas pois estavam atrapalhando na criação dos estilos.
 
-Preciso criar uma nova div pra encapsular as sobremessas no html e adicionar isso no javascript também.
+Outra coisa, as imagens tem que mudar conforme as telas. 
 
+Eu só adicionei uma coisa no javascript que foi relacionado ao encapsulamento das sobremessas(cards).
+
+MUDAR O STYLE PARA CADA TELA!!
 
 
