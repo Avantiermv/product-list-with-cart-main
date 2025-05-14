@@ -1,9 +1,9 @@
-Eu tirei umas linhas inuteis do html, eram relacionadas ao the-cart. Removi elas pois estavam atrapalhando na criação dos estilos.
+Eu mudei o style para as telas de tablet!
 
-Outra coisa, as imagens tem que mudar conforme as telas. 
+Eu adicionei uma nova div no html.
 
-Eu só adicionei uma coisa no javascript que foi relacionado ao encapsulamento das sobremessas(cards).
+Eu não mudei nada no script.js.
 
-MUDAR O STYLE PARA CADA TELA!!
+Agora só falta a tela para computadores e eu tenho que resolver o problema dos cards que não saem do carrinho quando chegam a zero e também fazer a parte de iniciar uma nova ordem de pedidos!
 
 
