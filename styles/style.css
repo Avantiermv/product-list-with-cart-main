@@ -471,6 +471,15 @@ h3 {
     }
 
     .desserts-content{
+        display: flex;
+        flex-wrap: wrap;
+        width: 00px;
+        height: 1000px;
+        margin: 10px;
+    }
+
+    .desserts-cards{
+        width: 300px;
         
     }
 }
