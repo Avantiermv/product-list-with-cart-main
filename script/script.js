@@ -19,8 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.add("desserts-cards");
 
                 const image = document.createElement("img");
-                image.src = dessert.image.mobile;
                 image.alt = dessert.name;
+
+                window.addEventListener("resize", () => {
+                    if(window.innerWidth < 769){
+                        image.src = dessert.image.mobile;
+                    } else if(window.innerWidth < 1025){
+                        image.src = dessert.image.tablet;
+                    } else {
+                        image.src = dessert.image.desktop;
+                    }
+                });
+                
 
                 const divButton = document.createElement("div");
                 divButton.classList.add("div-button");

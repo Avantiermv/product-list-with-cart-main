@@ -1,9 +1,3 @@
-Eu mudei o style para as telas de tablet!
-
-Eu adicionei uma nova div no html.
-
-Eu não mudei nada no script.js.
-
 Agora só falta a tela para computadores e eu tenho que resolver o problema dos cards que não saem do carrinho quando chegam a zero e também fazer a parte de iniciar uma nova ordem de pedidos!
 
 

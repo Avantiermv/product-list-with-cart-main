@@ -30,16 +30,9 @@
     align-items: center;
 }
 
-.div-h1-desserts{
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-}
-
 .h1-desserts{
     font-family: var(--font1);
     color: var(--Rose900);
-    padding: 10px;
 }
 
 .desserts-cards {
@@ -481,10 +474,8 @@ h3 {
         flex-flow: wrap column;
     }
 
-    .div-h1-desserts{
-        display: flex;
-        justify-content: flex-start;
-        width: 700px;
+    .h1-desserts{
+        margin-right: 335px;
     }
 
     .desserts-content{
@@ -511,5 +502,33 @@ h3 {
 
 /*----------PC's----------*/
 @media screen and (min-width: 1025px){
+    .principal{
+        flex-flow: wrap row;
+        align-items: self-start;
+    }
 
+    .h1-desserts{
+        margin-right: 335px;
+    }
+
+    .desserts-content{
+        display: flex;
+        flex-wrap: wrap;
+        width: 700px;
+        height: 1115px;
+        margin: 10px;
+    }
+
+    .desserts-cards{
+        width: 200px;
+        height: 330px;
+    }
+
+    .desserts-cards>.div-button>.button{
+        width: 160px;
+    }
+
+    .plus-minus-button{
+        width: 160px;
+    }
 }
