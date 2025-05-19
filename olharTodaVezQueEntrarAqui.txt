@@ -1,3 +1,0 @@
-Agora só falta a tela para computadores e eu tenho que resolver o problema dos cards que não saem do carrinho quando chegam a zero e também fazer a parte de iniciar uma nova ordem de pedidos!
-
-
