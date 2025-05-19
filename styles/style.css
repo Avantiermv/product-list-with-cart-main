@@ -144,11 +144,18 @@ span.itens-quantity{
 
 .desserts-cards>.div-button>.button {
     background-color: var(--Rose50);
+    border-color: var(--Rose900);
+    border-width: 1px;
     width: 200px;
     height: 40px;
     border-radius: 45px;
     position: absolute;
     transform: translate(3px, -30px);
+}
+
+.button p{
+    font-family: var(--font1);
+    font-weight: 600;
 }
 
 .text {
@@ -482,13 +489,12 @@ h3 {
         display: flex;
         flex-wrap: wrap;
         width: 700px;
-        height: 1115px;
         margin: 10px;
     }
 
     .desserts-cards{
         width: 200px;
-        height: 330px;
+        height: 385px;
     }
 
     .desserts-cards>.div-button>.button{
@@ -505,23 +511,24 @@ h3 {
     .principal{
         flex-flow: wrap row;
         align-items: self-start;
+        padding-top: 50px;
     }
 
     .h1-desserts{
-        margin-right: 335px;
+        margin-right: 900px;
+        padding: 10px;
     }
 
     .desserts-content{
         display: flex;
         flex-wrap: wrap;
-        width: 700px;
-        height: 1115px;
+        width: 1035px;
         margin: 10px;
     }
 
     .desserts-cards{
-        width: 200px;
-        height: 330px;
+        width: 320px;
+        height: 475px;
     }
 
     .desserts-cards>.div-button>.button{

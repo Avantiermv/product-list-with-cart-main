@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const image = document.createElement("img");
                 image.alt = dessert.name;
 
-                window.addEventListener("resize", () => {
+                function updateImgSize(){
                     if(window.innerWidth < 769){
                         image.src = dessert.image.mobile;
                     } else if(window.innerWidth < 1025){
@@ -29,9 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         image.src = dessert.image.desktop;
                     }
-                });
-                
+                }
+                updateImgSize();
 
+                document.addEventListener('DOMContentLoaded', updateImgSize);
+                window.addEventListener('resize', updateImgSize);
+                
                 const divButton = document.createElement("div");
                 divButton.classList.add("div-button");
                 divButton.id = "add-button";
