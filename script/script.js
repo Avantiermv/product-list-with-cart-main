@@ -278,6 +278,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     emptyCartInfo.classList.add('empty-cart-info-visible');
                 }
                 //----------Fim das funções do carrinho----------// 
+
+                //----------Função de start new order----------// 
+                startAnotherOrder(dessert);
+
             });
 
             //----------Inicio da criação do carrinho----------// 
@@ -482,6 +486,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             divContent.appendChild(buttonOfStartNewOrder);
             //----------Fim da criação dos itens de "Start New Order"----------// 
+                
+            //----------Inicio das funções do StartNewOrder----------// 
+
+            function startAnotherOrder(){
+                console.log("Iae!!");
+            }
+
+            //----------Fim das funções do StartNewOrder----------// 
+
+
+            
 
 
         }).catch(error => {

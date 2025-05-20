@@ -23,6 +23,10 @@
 
 /*MOBILE FIRST (375px) */
 
+body{
+    background-color: var(--Rose100);
+}
+
 .principal {
     display: flex;
     flex-flow: wrap column;
@@ -38,9 +42,7 @@
 .desserts-cards {
     width: 350px;
     height: 390px;
-    border-style: solid;
-    border-color: orange;
-    box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.316);
+    border-radius: 15px;
     margin: 10px;
 
     font-family: var(--font1);
@@ -66,14 +68,7 @@
     border-style: solid;
 }
 
-.div-button>button:hover{
-    cursor: pointer;
-    border-color: var(--Rose300);
-    transition: 0.3s;
-}
-
-.div-button>button>img,
-p {
+.div-button>button>img,p {
     padding: 8px;
 }
 
@@ -134,7 +129,7 @@ button.buttonIncrements{
 }
 
 button.buttonIncrements:hover{
-    border-color: var(--Rose900);
+    border-color: var(--Rose400);
     transition: 0.5s;
 }
 
@@ -151,6 +146,13 @@ span.itens-quantity{
     border-radius: 45px;
     position: absolute;
     transform: translate(3px, -30px);
+}
+
+.desserts-cards>.div-button>.button:hover{
+    cursor: pointer;
+    color: var(--Red);
+    border-color: var(--Red);
+    transition: 0.3s;
 }
 
 .button p{
@@ -190,11 +192,9 @@ h3 {
 .the-cart{
     width: 350px;
     height: 100%;
-    border-style: solid;
     border-radius: 20px;
-    border-style: none;
-    box-shadow: 3px 2px 7px rgba(0, 0, 0, 0.316);
     margin: 10px;
+    background-color: var(--Rose50);
 
     font-family: var(--font1);
 }
