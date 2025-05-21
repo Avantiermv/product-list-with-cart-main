@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(desserts => { //quando todas as promessas de cima forem sucesso, ele executa essa linha
             const principal = document.querySelector('#desserts-container');
             const divToTheDesserts = document.querySelector('.desserts-content');
+            const productsBought = document.querySelector('.products-bought');
             const startNewOrder = document.querySelector('.startNewOrder');
             startNewOrder.classList.remove('startNewOrder');
             startNewOrder.classList.add('hidden');
@@ -278,10 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     emptyCartInfo.classList.add('empty-cart-info-visible');
                 }
                 //----------Fim das funções do carrinho----------// 
-
-                //----------Função de start new order----------// 
-                startAnotherOrder(dessert);
-
             });
 
             //----------Inicio da criação do carrinho----------// 
@@ -379,8 +376,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 principal.classList.add('hidden');
                 startNewOrder.classList.remove('hidden');
                 startNewOrder.classList.add('startNewOrder');
+                orderWasConfirmed();
             });
-            
             
             theCart.appendChild(cartTitle);
             cartTitle.appendChild(spanCartTitle);
@@ -406,100 +403,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             principal.appendChild(theCart);
             //----------Fim da criação do carrinho----------// 
-
-            //----------Inicio da criação dos itens de "Start New Order"----------// 
-            const checkImg = document.createElement('div');
-            checkImg.classList.add('check-img');
-
-            const imgCheck = document.createElement('img');
-            imgCheck.src = 'assets/images/icon-order-confirmed.svg';
-             
-            const h1 = document.createElement('h1');
-            h1.classList.add('h1-order-confirmed');
-            h1.textContent = "Order confirmed";
-
-            const p1 = document.createElement('p');
-            p1.classList.add('p1-order-confirmed');
-            p1.textContent = "We hope you enjoy your food!";
-
-            const divContent = document.createElement('div');
-            divContent.classList.add('content');
-
-            const divProductsBoght = document.createElement('div');
-            divProductsBoght.classList.add('products-bought');
-
-            const divProductsBoghtInfo = document.createElement('div');
-            divProductsBoghtInfo.classList.add('products-bought-info');
-
-            const divThumbnail = document.createElement('div');
-            divThumbnail.classList.add('img-thumbnail');
-
-            const imgThumbnail = document.createElement('img');
-
-            const divPriceAndQuantity = document.createElement('div');
-            divPriceAndQuantity.classList.add('name-price-quantity-itens');
-
-            const p1NameItem = document.createElement('p');
-            p1NameItem.classList.add('nameitem');
-
-            const divQuantityPriceItem = document.createElement('div');
-            divQuantityPriceItem.classList.add('quantity-priceitem');
-
-            const pQuantityInfo = document.createElement('P');
-            pQuantityInfo.classList.add('quantity-info-div-new-order');
-
-            const pQuantityPrice = document.createElement('p');
-            pQuantityPrice.classList.add('quantity-price-div-new-order');
-
-            const divTotalPriceItem = document.createElement('div');
-            divTotalPriceItem.classList.add('total-price-peritem-div');
-
-            const pTotalPriceItem = document.createElement('p');
-            pTotalPriceItem.classList.add('total-price-peritem');
-
-            const buttonOfStartNewOrder = document.createElement('button');
-            buttonOfStartNewOrder.classList.add('confirm-order');
-
-            const hrOfStartNewOrder = document.createElement('hr');
-            hrOfStartNewOrder.classList.add('hr');
-
-            startNewOrder.appendChild(checkImg);
-            checkImg.appendChild(imgCheck);
-            startNewOrder.appendChild(h1);
-            startNewOrder.appendChild(p1);
-
-            startNewOrder.appendChild(divContent);
-            divContent.appendChild(divProductsBoght);
-            divProductsBoght.appendChild(divProductsBoghtInfo);
-            divProductsBoghtInfo.appendChild(divThumbnail);
-            divThumbnail.appendChild(imgThumbnail);
-
-            divProductsBoghtInfo.appendChild(divPriceAndQuantity);
-            divPriceAndQuantity.appendChild(p1NameItem);
-            divPriceAndQuantity.appendChild(divQuantityPriceItem);
-            divQuantityPriceItem.appendChild(pQuantityInfo);
-            divQuantityPriceItem.appendChild(pQuantityPrice);
-
-            divProductsBoghtInfo.appendChild(divTotalPriceItem);
-            divTotalPriceItem.appendChild(pTotalPriceItem);
-            divProductsBoghtInfo.appendChild(hrOfStartNewOrder);
-
-            divContent.appendChild(buttonOfStartNewOrder);
-            //----------Fim da criação dos itens de "Start New Order"----------// 
                 
             //----------Inicio das funções do StartNewOrder----------// 
-
-            function startAnotherOrder(){
-                console.log("Iae!!");
+            function orderWasConfirmed(){
+                
             }
-
             //----------Fim das funções do StartNewOrder----------// 
-
-
-            
-
-
         }).catch(error => {
             console.log('Error', error);
         });
 });
+function startN(){
+    location.reload();
+}

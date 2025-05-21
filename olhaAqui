@@ -1,5 +1,5 @@
-Eu terminei todo o Style do site, sem necessidade de mexer nele agora.
+No javascript, na função orderWasConfirmed
+    Todos os outros itens serão adicionados ao products bought.
 
-Eu preciso criar uma função que faz o seguinte: 
-
-    Toda vez que eu clicar em confirm order, a função vai ser chamada e quando ela for chamada vai adicionar todos os itens que estão dentro do carrinho, como visualização de quais itens "eu comprei".
+    já foi adicionado lá no js uma constante onde os outros itens serão adicionados.
+    Cada item adicionado tera sua própria caixa!
