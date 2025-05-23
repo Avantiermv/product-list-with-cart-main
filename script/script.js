@@ -203,9 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 function dinamicDiv(product, quantityInf, itemP, quantityP){
-
                     const existingProduct = document.querySelector(`.products[data-name="${product.name}"]`);
-
                     if(!existingProduct){
                         const products = document.createElement('div');
                         products.classList.add('products');
@@ -260,6 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         existingProductQuantityInfo.textContent = quantityInf.textContent;
                         existingProductsQuantityPrice.textContent = quantityP.textContent;
                     }
+                    orderWasConfirmed(product, quantityInf, itemP, quantityP);
                 }
                 //----------Fim das funções que somam um item ou retiram um item do carrinho----------// 
 
@@ -376,7 +375,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 principal.classList.add('hidden');
                 startNewOrder.classList.remove('hidden');
                 startNewOrder.classList.add('startNewOrder');
-                orderWasConfirmed();
             });
             
             theCart.appendChild(cartTitle);
@@ -405,8 +403,67 @@ document.addEventListener('DOMContentLoaded', () => {
             //----------Fim da criação do carrinho----------// 
                 
             //----------Inicio das funções do StartNewOrder----------// 
-            function orderWasConfirmed(){
-                
+            function orderWasConfirmed(dessert, quantityInfo, unitPrice, totalItemPrice){
+                const existingProduct = document.querySelector(`.products-bought-info[data-name="${dessert.name}"]`);
+                if(!existingProduct){
+                    const productsBoughtInfo = document.createElement('div');
+                    productsBoughtInfo.classList.add('products-bought-info');
+                    productsBoughtInfo.setAttribute('data-name', dessert.name);
+
+                    const imgThumbnail = document.createElement('div');
+                    imgThumbnail.classList.add('img-thumbnail');
+
+                    const img = document.createElement('img');
+                    img.src = dessert.image.thumbnail;
+
+                    const namePriceQuantityItens = document.createElement('div');
+                    namePriceQuantityItens.classList.add('name-price-quantity-itens');
+
+                    const nameItem = document.createElement('p');
+                    nameItem.classList.add('nameitem');
+                    nameItem.textContent = dessert.name;
+
+                    const quantityPriceItem = document.createElement('div');
+                    quantityPriceItem.classList.add('quantity-priceitem');
+
+                    const quantityInfoDivNewOrder = document.createElement('p');
+                    quantityInfoDivNewOrder.classList.add('quantity-info-div-new-order');
+                    quantityInfoDivNewOrder.textContent = quantityInfo.textContent;
+                            
+                    const quantityPriceDivNewOrder = document.createElement('p');
+                    quantityPriceDivNewOrder.classList.add('quantity-price-div-new-order');
+                    quantityPriceDivNewOrder.textContent = unitPrice.textContent;
+
+                    const totalPricePerItemDiv = document.createElement('div');
+                    totalPricePerItemDiv.classList.add('total-price-peritem-div');
+
+                    const totalPricePerItem = document.createElement('p');
+                    totalPricePerItem.classList.add('total-price-peritem');
+                    totalPricePerItem.textContent = totalItemPrice.textContent;
+
+                    const hr = document.createElement('hr');
+                    hr.classList.add('hr');
+
+                    productsBoughtInfo.appendChild(imgThumbnail);
+                    imgThumbnail.appendChild(img);
+
+                    productsBoughtInfo.appendChild(namePriceQuantityItens);
+                    namePriceQuantityItens.appendChild(nameItem);
+                    namePriceQuantityItens.appendChild(quantityPriceItem);
+                    quantityPriceItem.appendChild(quantityInfoDivNewOrder);
+                    quantityPriceItem.appendChild(quantityPriceDivNewOrder);
+                    productsBoughtInfo.appendChild(totalPricePerItemDiv);
+                    totalPricePerItemDiv.appendChild(totalPricePerItem);
+
+                    productsBoughtInfo.appendChild(hr);
+                    productsBought.appendChild(productsBoughtInfo);  
+                } else {
+                    const existingProductQuantityInfo = existingProduct.querySelector('.quantity-info-div-new-order');
+                    const existingProductsQuantityPrice = existingProduct.querySelector('.quantity-price-div-new-order');
+
+                    existingProductQuantityInfo.textContent = quantityInfo.textContent;
+                    existingProductsQuantityPrice.textContent = totalItemPrice.textContent;
+                }
             }
             //----------Fim das funções do StartNewOrder----------// 
         }).catch(error => {
