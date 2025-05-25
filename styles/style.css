@@ -470,6 +470,12 @@ h3 {
     font-weight: bold;
 }
 
+.order-total-start-new-order{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
 .hidden{
     display: none;
 }

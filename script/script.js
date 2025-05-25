@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     totalPricePerItemDiv.appendChild(totalPricePerItem);
 
                     productsBoughtInfo.appendChild(hr);
-                    productsBought.appendChild(productsBoughtInfo);  
+                    productsBought.appendChild(productsBoughtInfo); 
                 } else {
                     const existingProductQuantityInfo = existingProduct.querySelector('.quantity-info-div-new-order');
                     const existingProductsQuantityPrice = existingProduct.querySelector('.quantity-price-div-new-order');

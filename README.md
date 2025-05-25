@@ -31,13 +31,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./assets/images/screencapture-127-0-0-1-5500-2025-05-23-14_22_59.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Avantiermv/product-list-with-cart-main)
+- Live Site URL: [Add live site URL here](https://avantiermv.github.io/product-list-with-cart-main/)
 
 ## My process
 
@@ -51,12 +51,13 @@ Users should be able to:
 
 ### What I learned
 
-
+What I learned: I improved my knowledge of some aspects of javascript, for example, the use of json files, functions, arrow functions and addEventListeners. BUT, I need to study a lot more. Analyzing other codes, I realized that my code has some problems to be solved. 
 
 ### Continued development
+
+I need to study more about design patterns, functional programming, event delegation, web components and code organization.
 
 ## Author
 
 - Frontend Mentor - [@avantiermv](https://github.com/Avantiermv)
 
-## Acknowledgments
