@@ -14,8 +14,6 @@ This is a solution to the [Product list with cart challenge on Frontend Mentor](
   - [Continued development](#continued-development)
 - [Author](#author)
 
-
-
 ## Overview
 
 ### The challenge
@@ -32,7 +30,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./assets/images/screencapture-127-0-0-1-5500-2025-05-23-14_22_59.png)
-
 
 ### Links
 
