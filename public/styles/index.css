@@ -14,4 +14,13 @@
     --Rose-500: hsl(12, 20%, 44%);
     --Rose-900: hsl(14, 65%, 9%);
 }
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
 /*Font size (product names): 16px*/
