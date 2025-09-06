@@ -20,7 +20,21 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
-
-
 /*Font size (product names): 16px*/
+/*mobile first*/
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards{
+    display: grid;
+    padding: 10px;
+
+    width: 100%;
+}

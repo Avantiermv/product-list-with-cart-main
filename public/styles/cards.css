@@ -1,1 +1,19 @@
 @import url('index.css');
+
+.card{
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 100%;
+    margin: 5px;
+}
+
+.dessert-image{
+    background-image: url('/images/image-baklava-mobile.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    width: 100%;
+    height: 20px;
+}
