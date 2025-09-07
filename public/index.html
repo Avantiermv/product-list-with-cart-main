@@ -6,6 +6,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <title>Frontend Mentor | Product list with cart</title>
   <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/cards.css">
 </head>
 <body>
   
@@ -15,7 +16,18 @@
     <div class="cards">
       <div class="card">
         <div class="dessert-image"></div>
-        <div class="card-button-add"></div>
+        <div class="card-button">
+
+          <div class="align-add-to-cart-first-info">
+            <img src="images/icon-add-to-cart.svg" alt="add to cart">
+            <p class="add-to-cart-p">Add to cart</p>
+          </div>
+
+          <div class="buttons-align" style="display: none;">
+            <button class="add-item"></button>
+            <button class="remove-item"></button>
+          </div>
+        </div>
         <div class="dessert-information">
           hahahahhahahhah
         </div>
