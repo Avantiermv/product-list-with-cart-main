@@ -30,6 +30,13 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-family: var(--font);
+}
+
+.title{
+    padding: 10px;
+    color: var(--Rose-900);
 }
 
 .cards{

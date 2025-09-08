@@ -20,18 +20,38 @@
 
     border-radius: 15px;
 
-    width: 330px;
-    height: 215px;
+    width: 100%;
+    height: 227px;
 }
 
 .card-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     padding: 10px;
     width: 175px;
     height: 50px;
     margin: 10px;
 
-    border: 1px solid var(--Red);
+    box-shadow: 0px 0px 2px 1px var(--Red);
     border-radius: 25px;
+}
+
+.add-to-cart-p{
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--Rose-900);
+}
+
+.card-button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 4px 1px var(--Red);
+    transition: 0.3s;
+    .add-to-cart-p{
+        color: var(--Red);
+        transition: 0.3s;
+    }
 }
 
 .align-add-to-cart-first-info{
@@ -41,4 +61,44 @@
 
     width: 100%;
     height: 100%;
+}
+
+
+.buttons-add-and-remove-align{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+.dessert-information{
+    width: 100%;
+}
+
+.dessert-category{
+    font-size: 0.9em;
+    color: var(--Rose-400);
+}
+
+.dessert-name{
+    font-size: 1.2em;
+    color: var(--Rose-900);
+}
+
+.dessert-price{
+    font-size: 1.1em;
+    color: var(--Red);
+}
+
+.dessert-category, .dessert-name, .dessert-price{
+    padding-top: 5px;
 }
