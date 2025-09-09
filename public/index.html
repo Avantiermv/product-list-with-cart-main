@@ -7,6 +7,7 @@
   <title>Frontend Mentor | Product list with cart</title>
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/activestats.css">
 </head>
 <body>
   
@@ -15,22 +16,22 @@
 
     <div class="cards">
       <div class="card">
+        
         <div class="dessert-image"></div>
 
         <div class="card-button">
-
-          <div class="align-add-to-cart-first-info" style="display: none;">
-            <img src="images/icon-add-to-cart.svg" alt="add to cart">
+          <div class="align-add-to-cart-first-info">
+            <img src="images/icon-add-to-cart.svg" alt="add to cart" class="image-add-to-cart">
             <p class="add-to-cart-p">Add to cart</p>
           </div>
 
-          <div class="buttons-add-and-remove-align">
-            <button class="add-item">.</button>
-            <p class="dessert-quantity">0</p>
-            <button class="remove-item">.</button>
+          <div class="second-button">
+            <button class="increment-button"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="blue" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/><path xmlns="http://www.w3.org/2000/svg" fill="#fff" d="M0 .375h10v1.25H0V.375Z" class="svg-decrement-increment"/></svg></button>
+            <p class="info-quantity">0</p>
+            <button class="remove-button"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/><path xmlns="http://www.w3.org/2000/svg" fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" class="svg-decrement-increment"/></svg></button>
           </div>
-          
         </div>
+
         <div class="dessert-information">
           <h2 class="dessert-category">Waffle</h2>
           <h3 class="dessert-name">Waffle with berries</h3>
