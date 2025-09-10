@@ -18,10 +18,11 @@ function createItem(dessert){
     cardButton.classList.add('card-button');
 
     const alignAddToCartFirstInfo = document.createElement('div');
-    cardButton.classList.add('align-add-to-cart-first-info');
+    alignAddToCartFirstInfo.classList.add('align-add-to-cart-first-info');
 
     const imageAddToCart = document.createElement('img');
     imageAddToCart.classList.add('image-add-to-cart');
+    imageAddToCart.src = '/images/icon-add-to-cart.svg';
 
     const paragraphAddToCard = document.createElement('p');
     paragraphAddToCard.classList.add('add-to-cart-p');
