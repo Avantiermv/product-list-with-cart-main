@@ -37,7 +37,7 @@ function createItem(dessert){
     const dessertQuantity = document.createElement('p');
     dessertQuantity.classList.add('info-quantity');
     /*quantidade da sobremessa vai receber de um array lá*/
-    dessertQuantity.innerText = "0";
+    dessertQuantity.textContent = "0";
 
     const removeItem = document.createElement('button');
     removeItem.classList.add('remove-button');
@@ -50,15 +50,17 @@ function createItem(dessert){
 
     const dessertCategory = document.createElement('h2');
     dessertCategory.classList.add('dessert-category');
-    dessertCategory.innerText = dessert.category;
+    dessertCategory.textContent = dessert.category;
 
     const dessertName = document.createElement('h3');
     dessertName.classList.add('dessert-name');
-    dessertName.innerText = dessert.name;
+    dessertName.textContent = dessert.name;
 
     const dessertPrice = document.createElement('h4');
     dessertPrice.classList.add('dessert-price');
-    dessertPrice.innerText = dessert.price;
+    let price = parseFloat(dessert.price).toFixed(2);
+    price = price.padStart(4, '0');
+    dessertPrice.textContent = `$${price}`;
 
     card.appendChild(dessertImage);
 
