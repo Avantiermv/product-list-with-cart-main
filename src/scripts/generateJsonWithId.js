@@ -6,7 +6,7 @@ const produtos = JSON.parse(rawData);
 
 const produtosComId = produtos.map((item, index) => {
   const nwimage = {
-    thumbnail: item.image.thumbnail.replace('.assets/', ''),
+    thumbnail: item.image.thumbnail.replace('./assets', '/'),
     mobile: item.image.mobile.replace('./assets', ''),
     tablet: item.image.tablet.replace('./assets', ''),
     desktop: item.image.desktop.replace('./assets', '')
