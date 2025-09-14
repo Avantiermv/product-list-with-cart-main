@@ -12,7 +12,7 @@ function createItem(dessert){
 
     const dessertImage = document.createElement('img');
     dessertImage.classList.add('dessert-image');
-    dessertImage.style.backgroundImage = dessert.image.mobile;
+    dessertImage.src = dessert.image.mobile;
 
     const cardButton = document.createElement('div');
     cardButton.classList.add('card-button');
