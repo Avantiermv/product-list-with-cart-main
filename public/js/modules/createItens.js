@@ -1,3 +1,5 @@
+import { changeButtonState } from "./changeButtonState.js";
+
 const cards = document.querySelector('.cards');
 
 export function createItenDynamically(desserts){
@@ -16,6 +18,9 @@ function createItem(dessert){
 
     const cardButton = document.createElement('div');
     cardButton.classList.add('card-button');
+    cardButton.addEventListener('click', () => {
+        changeButtonState(dessert);
+    });
 
     const alignAddToCartFirstInfo = document.createElement('div');
     alignAddToCartFirstInfo.classList.add('align-add-to-cart-first-info');
