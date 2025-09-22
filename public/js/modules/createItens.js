@@ -1,4 +1,4 @@
-import { changeButtonState } from "./changeButtonState.js";
+import { mudarodisplaydobotão } from "./changeButtonState.js";
 
 const cards = document.querySelector('.cards');
 
@@ -18,12 +18,13 @@ function createItem(dessert){
 
     const cardButton = document.createElement('div');
     cardButton.classList.add('card-button');
-    cardButton.addEventListener('click', () => {
-        changeButtonState(dessert);
+    cardButton.addEventListener('mouseleave', () => {
+        alignAddToCartFirstInfo.style.display = 'flex';
     });
 
     const alignAddToCartFirstInfo = document.createElement('div');
     alignAddToCartFirstInfo.classList.add('align-add-to-cart-first-info');
+    alignAddToCartFirstInfo.addEventListener('click', mudarodisplaydobotão);
 
     const imageAddToCart = document.createElement('img');
     imageAddToCart.classList.add('image-add-to-cart');
