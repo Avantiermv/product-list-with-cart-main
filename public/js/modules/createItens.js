@@ -1,4 +1,4 @@
-import { mudarodisplaydobotão } from "./changeButtonState.js";
+import { esconderbotãodeaddtocart, mostrarbotãodeaddtocart } from "./changeButtonState.js";
 
 const cards = document.querySelector('.cards');
 
@@ -20,11 +20,19 @@ function createItem(dessert){
     cardButton.classList.add('card-button');
     cardButton.addEventListener('mouseleave', () => {
         alignAddToCartFirstInfo.style.display = 'flex';
+        // buttonsAddAndRemoveAlign.classList.remove('buttons-add-and-remove-align');
+        // buttonsAddAndRemoveAlign.classList.add('second-button');
+        mostrarbotãodeaddtocart(buttonsAddAndRemoveAlign);
     });
 
     const alignAddToCartFirstInfo = document.createElement('div');
     alignAddToCartFirstInfo.classList.add('align-add-to-cart-first-info');
-    alignAddToCartFirstInfo.addEventListener('click', mudarodisplaydobotão);
+    alignAddToCartFirstInfo.addEventListener('click', (event) => {
+        event.currentTarget.style.display = 'none';
+        // buttonsAddAndRemoveAlign.classList.remove('second-button');
+        // buttonsAddAndRemoveAlign.classList.add('buttons-add-and-remove-align');
+        esconderbotãodeaddtocart(buttonsAddAndRemoveAlign);
+    });
 
     const imageAddToCart = document.createElement('img');
     imageAddToCart.classList.add('image-add-to-cart');
@@ -38,15 +46,17 @@ function createItem(dessert){
     buttonsAddAndRemoveAlign.classList.add('second-button');
 
     const addItem = document.createElement('button');
-    addItem.classList.add('increment-button');
+    addItem.classList.add('add-item');
+    addItem.addEventListener('click', () => {console.log("ADD", dessert.name)});
 
     const dessertQuantity = document.createElement('p');
-    dessertQuantity.classList.add('info-quantity');
+    dessertQuantity.classList.add('dessert-quantity');
     /*quantidade da sobremessa vai receber de um array lá*/
     dessertQuantity.textContent = "0";
 
     const removeItem = document.createElement('button');
-    removeItem.classList.add('remove-button');
+    removeItem.classList.add('remove-item');
+    removeItem.addEventListener('click', () => {console.log('REMOVE', dessert.name)});
 
     const svgImageAdd = document.createElement('svg');
     const svgImageRemove = document.createElement('svg');

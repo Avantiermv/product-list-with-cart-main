@@ -41,6 +41,6 @@
     }
 }
 
-.second-button, .increment-button, .info-quantity, .remove-button{
+.second-button{
     display: none;
 }
