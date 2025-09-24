@@ -29,6 +29,13 @@ body{
     justify-content: center;
 
     font-family: var(--font);
+    background-color: var(--Rose-100);
+}
+
+svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .title{

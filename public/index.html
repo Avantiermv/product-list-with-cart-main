@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles/index.css">
   <link rel="stylesheet" href="styles/activestats.css">
   <link rel="stylesheet" href="styles/cards.css">
+  <link rel="stylesheet" href="styles/cart.css">
   
 </head>
 <body>
@@ -16,32 +17,19 @@
     <h1 class="title">Desserts</h1>
 
     <div class="cards">
-      <!-- <div class="card">
-        
-        <div class="dessert-image"></div>
-
-        <div class="card-button">
-          <div class="align-add-to-cart-first-info">
-            <img src="images/icon-add-to-cart.svg" alt="add to cart" class="image-add-to-cart">
-            <p class="add-to-cart-p">Add to cart</p>
-          </div>
-
-          <div class="second-button">
-            <button class="increment-button"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="blue" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/><path xmlns="http://www.w3.org/2000/svg" fill="#fff" d="M0 .375h10v1.25H0V.375Z" class="svg-decrement-increment"/></svg></button>
-            <p class="info-quantity">0</p>
-            <button class="remove-button"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/><path xmlns="http://www.w3.org/2000/svg" fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" class="svg-decrement-increment"/></svg></button>
-          </div>
-        </div>
-
-        <div class="dessert-information">
-          <h2 class="dessert-category">Waffle</h2>
-          <h3 class="dessert-name">Waffle with berries</h3>
-          <h4 class="dessert-price">R$5.00</h4>
-        </div>
-      </div> -->
     </div>
 
-    <div class="cart"></div>
+    <div class="cart">
+      <div class="cart-content">
+        <div class="cart-quantity-title"><h1 class="quatity-title">Your Cart (<span class="quantity-number-in-the-cart">0</span>)</h1></div>
+        <div class="nothing-added-info">
+          <img src="images/illustration-empty-cart.svg" alt="empty-cart">
+          <h2 class="nothing-added-text">Your added items will appear here</h2>
+        </div>
+      </div>
+
+      <div class="cart-items-added"></div>
+    </div>
   </div>
   
 

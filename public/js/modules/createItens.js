@@ -1,4 +1,5 @@
-import { esconderbotãodeaddtocart, mostrarbotãodeaddtocart } from "./changeButtonState.js";
+import { hideButtonAddToCart, showAddToCartButton } from "./changeButtonState.js";
+import { addDessert } from "./productsaddedinthecart.js";
 
 const cards = document.querySelector('.cards');
 
@@ -20,18 +21,16 @@ function createItem(dessert){
     cardButton.classList.add('card-button');
     cardButton.addEventListener('mouseleave', () => {
         alignAddToCartFirstInfo.style.display = 'flex';
-        // buttonsAddAndRemoveAlign.classList.remove('buttons-add-and-remove-align');
-        // buttonsAddAndRemoveAlign.classList.add('second-button');
-        mostrarbotãodeaddtocart(buttonsAddAndRemoveAlign);
+        dessertImage.classList.remove('dessert-selected');
+        showAddToCartButton(buttonsAddAndRemoveAlign);
     });
 
     const alignAddToCartFirstInfo = document.createElement('div');
     alignAddToCartFirstInfo.classList.add('align-add-to-cart-first-info');
     alignAddToCartFirstInfo.addEventListener('click', (event) => {
         event.currentTarget.style.display = 'none';
-        // buttonsAddAndRemoveAlign.classList.remove('second-button');
-        // buttonsAddAndRemoveAlign.classList.add('buttons-add-and-remove-align');
-        esconderbotãodeaddtocart(buttonsAddAndRemoveAlign);
+        dessertImage.classList.add('dessert-selected');
+        hideButtonAddToCart(buttonsAddAndRemoveAlign);
     });
 
     const imageAddToCart = document.createElement('img');
@@ -45,21 +44,26 @@ function createItem(dessert){
     const buttonsAddAndRemoveAlign = document.createElement('div');
     buttonsAddAndRemoveAlign.classList.add('second-button');
 
-    const addItem = document.createElement('button');
-    addItem.classList.add('add-item');
-    addItem.addEventListener('click', () => {console.log("ADD", dessert.name)});
-
+    const removeItem = document.createElement('button');
+    removeItem.classList.add('remove-item');
+    removeItem.addEventListener('click', () => {console.log('REMOVE', dessert.name)});
+   
     const dessertQuantity = document.createElement('p');
     dessertQuantity.classList.add('dessert-quantity');
     /*quantidade da sobremessa vai receber de um array lá*/
     dessertQuantity.textContent = "0";
 
-    const removeItem = document.createElement('button');
-    removeItem.classList.add('remove-item');
-    removeItem.addEventListener('click', () => {console.log('REMOVE', dessert.name)});
+    const addItem = document.createElement('button');
+    addItem.classList.add('add-item');
+    addItem.addEventListener('click', () => {
+        addDessert(dessert);
+    });
 
     const svgImageAdd = document.createElement('svg');
+    svgImageAdd.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/><path xmlns="http://www.w3.org/2000/svg" fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z" class="svg-decrement-increment"/></svg>';
     const svgImageRemove = document.createElement('svg');
+    svgImageRemove.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="blue" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/><path xmlns="http://www.w3.org/2000/svg" fill="#fff" d="M0 .375h10v1.25H0V.375Z" class="svg-decrement-increment"/></svg>';
+   
 
     const dessertInformation = document.createElement('div');
     dessertInformation.classList.add('dessert-information');
@@ -85,10 +89,10 @@ function createItem(dessert){
     alignAddToCartFirstInfo.appendChild(imageAddToCart);
     alignAddToCartFirstInfo.appendChild(paragraphAddToCard);
     cardButton.appendChild(buttonsAddAndRemoveAlign);
-    buttonsAddAndRemoveAlign.appendChild(addItem);
+    buttonsAddAndRemoveAlign.appendChild(removeItem);
     addItem.appendChild(svgImageAdd);
     buttonsAddAndRemoveAlign.appendChild(dessertQuantity)
-    buttonsAddAndRemoveAlign.appendChild(removeItem);
+    buttonsAddAndRemoveAlign.appendChild(addItem);
     removeItem.appendChild(svgImageRemove);
 
     card.appendChild(dessertInformation);
