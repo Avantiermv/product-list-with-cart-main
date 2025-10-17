@@ -1,8 +1,6 @@
 @import url('index.css');
 
 .cart{
-    background-color: var(--Rose-50);
-
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -11,6 +9,8 @@
     margin: 10px;
     
     border-radius: 15px;
+
+    background-color: var(--Rose-50);
 }
 
 .cart-content{
@@ -19,8 +19,6 @@
 }
 
 .cart-quantity-title{
-    width: 100%;
-    
     margin: 10px;
     padding: 10px;
 }
@@ -48,3 +46,110 @@
     color: var(--Rose-400);
 }
 
+.cart-items-added{
+    margin: 10px;
+}
+
+.list-items-added{
+    margin: 10px;
+}
+
+.item-information{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+
+    border-bottom: solid 1px var(--Rose-900);
+}
+
+.item-name{
+    font-family: var(--font);
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.quantity-price-totalItemPrice{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 10px;
+}
+
+.quantity-p{
+    font-family: var(--font);
+    font-weight: bold;
+    color: var(--Red);
+}
+
+.order-total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.order-total-text{
+    font-family: var(--font);
+}
+
+.order-total-price{
+    font-family: var(--font);
+    font-weight: bolder;
+    font-size: 1.4em;
+}
+
+.carbon-info-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+
+    background-color: hsla(14, 24%, 72%, 0.407);
+}
+
+.carbon-text-info{
+    font-family: var(--font);
+    font-size: 1em;
+}
+
+.align-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.confirm-order-button{
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: auto;
+
+    border-style: none;
+    border-radius: 20px;
+
+    font-family: var(--font);
+    font-size: 1.2em;
+    color: var(--Rose-50);
+    background-color: var(--Red);
+}
+
+.confirm-order-button:hover{
+    cursor: pointer;
+    background-color: hsl(14, 98%, 18%);
+    transition: 0.3s;
+}

@@ -1,7 +1,8 @@
 import { hideButtonAddToCart, showAddToCartButton } from "./changeButtonState.js";
-import { addDessert } from "./productsaddedinthecart.js";
+
 
 const cards = document.querySelector('.cards');
+
 
 export function createItenDynamically(desserts){
     desserts.forEach(dessert => {
@@ -46,7 +47,19 @@ function createItem(dessert){
 
     const removeItem = document.createElement('button');
     removeItem.classList.add('remove-item');
-    removeItem.addEventListener('click', () => {console.log('REMOVE', dessert.name)});
+    removeItem.addEventListener('click', () => {
+        fetch('/api/remove-dessert', {
+            method: 'DELETE',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(dessert)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // dessertQuantity.textContent = data.totalItens;
+        });
+    });
    
     const dessertQuantity = document.createElement('p');
     dessertQuantity.classList.add('dessert-quantity');
@@ -56,7 +69,17 @@ function createItem(dessert){
     const addItem = document.createElement('button');
     addItem.classList.add('add-item');
     addItem.addEventListener('click', () => {
-        addDessert(dessert);
+        fetch('/api/add-dessert', {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(dessert)
+        })
+        .then(response => response.json())
+        .then(data => {
+            // dessertQuantity.textContent = data.totalItens;
+        });
     });
 
     const svgImageAdd = document.createElement('svg');
