@@ -3,13 +3,13 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { router } from './src/routes/routes.js';
-import { pushDessertTotal, removeDessertTotal, getAllDesserts } from './src/data/allproductsstock.js';
+import { pushDessertTotal, removeDessertTotal, getDessertCount, getSingleItemId } from './src/data/allproductsstock.js';
 import { totalmem } from 'os';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-export const app = express();
+export const app = express(); 
 
 app.use(express.json());
 app.get('/api/data/', (req, res) => {
@@ -18,12 +18,18 @@ app.get('/api/data/', (req, res) => {
 app.post('/api/add-dessert', (req, res) => {
     const dessert = req.body;
     pushDessertTotal(dessert);
-    res.status(200).json({totalItems: getAllDesserts().length});
+    res.status(200).json({
+        totalItems: getDessertCount(),
+        singleItem: getSingleItemId(dessert.id)
+    });
 });
 app.delete('/api/remove-dessert', (req, res) => {
     const dessert = req.body;
     removeDessertTotal(dessert);
-    res.status(200).json({totalItems: getAllDesserts().length});
+    res.status(200).json({
+        totalItems: getDessertCount(),
+        singleItem: getSingleItemId(dessert.id)
+    });
 });
 
 app.use(express.urlencoded({extended: true}));
