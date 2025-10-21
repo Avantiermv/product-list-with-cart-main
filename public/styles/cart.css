@@ -47,6 +47,7 @@
 }
 
 .cart-items-added{
+    display: none;
     margin: 10px;
 }
 
@@ -85,6 +86,17 @@
     font-family: var(--font);
     font-weight: bold;
     color: var(--Red);
+}
+
+.item-price-p{
+    font-family: var(--font);
+    color: var(--Rose-400);
+}
+
+.total-item-p{
+    font-family: var(--font);
+    font-weight: bold;
+    color: var(--Rose-500);
 }
 
 .order-total{
@@ -132,6 +144,25 @@
     width: 100%;
 }
 
+.remove-single-item-button{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px;
+
+    border: solid 1px var(--Rose-400);
+    border-radius: 100%;
+    background-color: var(--Rose-50);
+}
+
+.remove-single-item-button:hover{
+    cursor: pointer;
+    border-color: var(--Rose-900);
+    transition: 0.3s;
+}
+
 .confirm-order-button{
     padding: 12px;
     width: 100%;
@@ -152,4 +183,8 @@
     cursor: pointer;
     background-color: hsl(14, 98%, 18%);
     transition: 0.3s;
+}
+
+.hidden{
+    display: none;
 }

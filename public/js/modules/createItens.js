@@ -1,4 +1,5 @@
 import { hideButtonAddToCart, showAddToCartButton } from "./changeButtonState.js";
+import { hideEmptyCartMessage, showCartMessage } from "./cartactions.js";
 
 
 const cards = document.querySelector('.cards');
@@ -57,14 +58,15 @@ function createItem(dessert){
         })
         .then(response => response.json())
         .then(data => {
-            // dessertQuantity.textContent = data.totalItens;
+            if(data.totalItems === 0){
+                showCartMessage();
+            }
+            dessertQuantity.textContent = data.singleItem;
         });
     });
    
     const dessertQuantity = document.createElement('p');
     dessertQuantity.classList.add('dessert-quantity');
-    /*quantidade da sobremessa vai receber de um array lá*/
-    dessertQuantity.textContent = "0";
 
     const addItem = document.createElement('button');
     addItem.classList.add('add-item');
@@ -78,7 +80,10 @@ function createItem(dessert){
         })
         .then(response => response.json())
         .then(data => {
-            // dessertQuantity.textContent = data.totalItens;
+            if(data.totalItems >= 1){
+                hideEmptyCartMessage();
+            }
+            dessertQuantity.textContent = data.singleItem;
         });
     });
 
