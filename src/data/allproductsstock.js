@@ -1,23 +1,26 @@
 import fs from 'fs';
+
 const dataPath = './src/data/data.json';
 
-let dessertAdded = [];
+let dessertAddedArray = [];
 
 export function pushDessertTotal(dessert){
-    dessertAdded.push(dessert);
-    console.log("Total items: ", dessertAdded.length);
+    dessertAddedArray.push(dessert);
+    console.log("total de items: ", dessertAddedArray.length);
 }
 
 export function removeDessertTotal(dessert){
-
-    const index = dessertAdded.findIndex(item => item.name.toLowerCase() === dessert.name.toLowerCase());
+    const index = dessertAddedArray.findIndex(item => item.name.toLowerCase() === dessert.name.toLowerCase());
     if(index !== -1){
-        dessertAdded.splice(index, 1);
+        dessertAddedArray.splice(index, 1);
     }
-    console.log("Total items: ", dessertAdded.length);
+    console.log("total de items: ", dessertAddedArray.length);
 }
 
-export function getAllDesserts() {
-    const raw = fs.readFileSync(dataPath);
-    return JSON.parse(raw);
+export function getSingleItemId(id){
+    return dessertAddedArray.filter(item => item.id === id).length;
+}
+
+export function getDessertCount() {
+    return dessertAddedArray.length;
 }
