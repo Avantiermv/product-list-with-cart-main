@@ -9,51 +9,59 @@
   <link rel="stylesheet" href="styles/activestats.css">
   <link rel="stylesheet" href="styles/cards.css">
   <link rel="stylesheet" href="styles/cart.css">
-  
+  <link rel="stylesheet" href="styles/popupstyle.css">
 </head>
+
 <body>
-  
   <div class="main-content">
-    <h1 class="title">Desserts</h1>
-
     <div class="cards">
+      <h1 class="title">Desserts</h1>
     </div>
-
     <div class="cart">
       <div class="cart-content">
         <div class="cart-quantity-title"><h1 class="quatity-title">Your Cart (<span class="quantity-number-in-the-cart">0</span>)</h1></div>
-
         <div class="nothing-added-info">
           <img src="images/illustration-empty-cart.svg" alt="empty-cart">
           <h2 class="nothing-added-text">Your added items will appear here</h2>
         </div>
-
         <div class="cart-items-added">
-          <div class="list-items-added">
-          
-            <div class="item-information">
-              <div class="align-item-informations">
-                <p class="item-name">Classic Brigadeiro</p>
-                <div class="quantity-price-totalItemPrice"><p class="quantity-p"><span class="quantity">1</span>x</p> <p class="item-price-p">@$<span class="item-price">5.50</span></p> <p class="total-item-p">$<span class="totalItemPrice">5.50</span></p></div>
-              </div>
-              <div class="align-remove-single-item-button">
-                <button class="remove-single-item-button"><img src="images/icon-remove-item.svg" alt="remove item"></button>
-              </div>
-            </div>
-
-          </div>
+          <div class="list-items-added"></div>
           <div class="final-informations">
-            <div class="order-total"><p class="order-total-text">Order total</p><p class="order-total-price">$<span>67.00</span></p></div>
+            <div class="order-total"><p class="order-total-text">Order total</p><p class="order-total-price"><span class="span-total-price"></span></p></div>
             <div class="carbon-info-div"><img src="images/icon-carbon-neutral.svg" alt="carbon-neutral"><p class="carbon-text-info">This is a <strong>carbon-neutral</strong> delivery</p></div>
-
             <div class="align-button"><button class="confirm-order-button">Confirm Order</button></div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-  
+
+  <div class="active-popup-background">
+    <div class="popup">
+      <div class="div-icon-confirmed"></div>
+      <div class="div-order-confirmed-title">
+        <h1 class="order-confirmed-text">Order Confirmed</h1>
+        <p class="thank-you-message">We hope you enjoy your food!</p>
+      </div>
+
+      <div class="div-purchased-items">
+        <div class="purchased-item-info">
+          <div class="item-thumbnail"></div>
+          <div class="item-name-quantity-Singleprice"></div>
+          <div class="item-totalPrice"></div>
+          <hr>
+        </div>
+
+        <div class="order-total-info">
+          <p class="price-of-total-price-text">Order Total</p>
+          <h1 class="price-of-total-price"></h1>
+        </div>
+      </div>
+
+      <button class="start-new-order-button">Start New Order</button>
+
+    </div>
+  </div>
 
   <script type="module" src="js/index.js"></script>
 </body>

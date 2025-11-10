@@ -30,6 +30,8 @@ body{
 
     font-family: var(--font);
     background-color: var(--Rose-100);
+
+    position: relative;
 }
 
 svg{
@@ -48,4 +50,48 @@ svg{
     padding: 10px;
 
     width: 100%;
+}
+
+@media screen and (min-width: 725px) {
+    .cards{
+        grid-template-columns: auto auto ;
+        grid-template-rows: auto auto auto auto auto;
+        gap: 20px;
+    }
+
+    .title{
+        grid-column: 1 / -1;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    .main-content{
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .title{
+        grid-column: 1 / -1;
+    }
+
+    .cards{
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
+    }
+
+    .card{
+        width: 340px;
+        height: 400px;
+    }
+
+    .cart{
+        height: 100%;
+        width: 325px;
+    }
+
+    .nothing-added-text{
+        text-align: center;
+    }
 }

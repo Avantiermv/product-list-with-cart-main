@@ -77,7 +77,6 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
 
     margin-top: 10px;
 }
@@ -97,6 +96,10 @@
     font-family: var(--font);
     font-weight: bold;
     color: var(--Rose-500);
+}
+
+.quantity-p, .item-price-p, .total-item-p{
+    padding-right: 15px;
 }
 
 .order-total{

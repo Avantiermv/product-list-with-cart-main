@@ -1,8 +1,8 @@
 import { hideButtonAddToCart, showAddToCartButton } from "./changeButtonState.js";
-import { hideEmptyCartMessage, showCartMessage } from "./cartactions.js";
-
+import { hideEmptyCartMessage, showCartMessage, showTotalPrice, createItemInTheCart, removeItemInTheCart } from "./cartactions.js";
 
 const cards = document.querySelector('.cards');
+const totalItemsInTheCartTitle = document.querySelector('.quantity-number-in-the-cart');
 
 
 export function createItenDynamically(desserts){
@@ -62,11 +62,15 @@ function createItem(dessert){
                 showCartMessage();
             }
             dessertQuantity.textContent = data.singleItem;
+            totalItemsInTheCartTitle.textContent = data.totalItems;
+            showTotalPrice(data.totalPrice);
+            removeItemInTheCart(data.dessertName, data.singleItem, data.dessertPriceTotalRemoved);
         });
     });
    
     const dessertQuantity = document.createElement('p');
     dessertQuantity.classList.add('dessert-quantity');
+    dessertQuantity.textContent = 0;
 
     const addItem = document.createElement('button');
     addItem.classList.add('add-item');
@@ -84,6 +88,9 @@ function createItem(dessert){
                 hideEmptyCartMessage();
             }
             dessertQuantity.textContent = data.singleItem;
+            totalItemsInTheCartTitle.textContent = data.totalItems;
+            showTotalPrice(data.totalPrice);
+            createItemInTheCart(data.dessertName, data.singleItem, data.dessertPrice, data.dessertPriceTotalAdded);
         });
     });
 
@@ -92,7 +99,6 @@ function createItem(dessert){
     const svgImageRemove = document.createElement('svg');
     svgImageRemove.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="blue" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/><path xmlns="http://www.w3.org/2000/svg" fill="#fff" d="M0 .375h10v1.25H0V.375Z" class="svg-decrement-increment"/></svg>';
    
-
     const dessertInformation = document.createElement('div');
     dessertInformation.classList.add('dessert-information');
 
