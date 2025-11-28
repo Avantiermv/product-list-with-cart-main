@@ -2,7 +2,8 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { pushDessertTotal, removeDessertTotal, getDessertCount, getSingleItemId, getAddToTotalPrice, getRemoveToTotalPrice, getDessertName, getDessertPrice, getDessertPriceRemovedAdded } from './src/data/allproductsstock.js';
+import { pushDessertTotal, removeDessertTotal, getDessertCount, getSingleItemId, getAddToTotalPrice, getRemoveToTotalPrice, getDessertName, getDessertPrice, getDessertPriceRemovedAdded, getDessertCountInTheArray, getDessertPriceInTheArray, getDessertSingleTotalPrice, clearCart} from './src/data/allproductsstock.js';
+import { dessertAddedArray, totalPrice} from './src/data/allproductsstock.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,11 +40,35 @@ app.delete('/api/remove-dessert', (req, res) => {
         dessertPriceTotalRemoved: updatedSingleDessertPrice
     });
 });
+app.get('/api/desserts', (req, res) => {
+    if(dessertAddedArray.length === 0){
+        return res.status(404).json({error: "Without items"});
+    }
+
+    const counts = getDessertCountInTheArray(dessertAddedArray);
+    const prices = getDessertPriceInTheArray(dessertAddedArray);
+    const totalPriceItems = getDessertSingleTotalPrice(dessertAddedArray);
+
+    const dessert = dessertAddedArray.map(dessert => ({
+        image: dessert.image.thumbnail,
+        name: dessert.name,
+        count: counts[dessert.id],
+        price: prices[dessert.id],
+        totalPriceItem: totalPriceItems[dessert.id]
+    }));
+
+    res.status(200).json({
+        desserts: dessert,
+        totalPrice: totalPrice
+    });
+});
+
+app.post('/api/start-new-order', (req, res) => {
+    clearCart();
+    res.status(200).json({message: "Starting a new order..."});
+});
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
-app.listen(3000, () => {
-    console.log("App rodando na porta 3000!");
-    console.log("http://localhost:3000");
-});
+export default app;
