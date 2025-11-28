@@ -45,3 +45,11 @@
 .second-button{
     display: none;
 }
+
+.visible{
+    display: flex;
+}
+
+.hidden{
+    display: none;
+}

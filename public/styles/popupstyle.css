@@ -2,7 +2,6 @@
 
 .active-popup-background{
     background-color: rgba(0, 0, 0, 0.282);
-    display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
@@ -13,4 +12,167 @@
 
     width: 100vw;
     height: 100vh;
+}
+
+.popup{
+    background-color: var(--Rose-50);
+
+    display: flex;
+    flex-flow: column wrap;
+
+    padding: 10px;
+    width: 100%;
+    max-width: 590px;
+
+    border-radius: 15px;
+}
+
+.div-order-confirmed-title{
+    display: flex;
+    flex-flow: column wrap;
+
+    width: 100%;
+}
+
+.order-confirmed-text{
+    font-size: 2.5em;
+
+    padding-right: 20px;
+    margin: 5px;
+}
+
+.thank-you-message{
+    font-size: 1.2em;
+    color: var(--Rose-400);
+
+    margin: 5px;
+}
+
+.div-purchased-items{
+    display: flex;
+    flex-flow: column nowrap;
+
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+
+    background-color: var(--Rose-100);
+}
+
+.purchased-item-info{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: solid 1px hsla(12, 20%, 44%, 0.219);
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+.align-thumbnail-with-div-totalPrice{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+.encapsulator{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.div-thumbnail-product{
+    padding-right: 10px;
+}
+
+.thumbnail-product-img{
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+}
+
+.div-item-name-quantity-Singleprice{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.product-name{
+    font-size: 1em;
+    font-weight: bold;
+    
+    color: var(--Rose-900);
+}
+
+.align-product-quantity-singlePrice{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.product-quantity, .product-singlePrice{
+    padding-right: 20px;
+}
+
+.product-quantity{
+    font-size: 0.9em;
+    font-weight: bold;
+
+    color: var(--Red);
+}
+
+.product-singlePrice{
+    font-size: 0.9em;
+    
+    color: var(--Rose-400);
+}
+
+.item-totalPrice{
+    font-size: 1.3em;
+    font-weight: bold;
+
+    color: var(--Rose-900);
+}
+
+.order-total-info{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-of-total-price-text{
+    font-size: 1.1em;
+    font-weight: 500;
+
+    color: var(--Rose-500);
+}
+
+.price-of-total-price{  
+    font-size: 1.8em;
+    font-weight: bold;
+
+    color: var(--Rose-900);
+}
+
+.start-new-order-button{
+    font-size: 1.2em;
+    font-weight: bold;
+
+    background-color: var(--Red);
+    color: var(--Rose-50);
+
+    margin: 5px;
+    padding: 10px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+.start-new-order-button:hover{
+    cursor: pointer;
+    background-color: hsl(14, 93%, 17%);
+    transition: 0.3s;
 }

@@ -1,4 +1,8 @@
+import { createTheItemsInfoIntoThePopUp } from "./popupactions.js";
+
 const listItemsAdded = document.querySelector('.list-items-added');
+const confirmOrderButton = document.querySelector('.confirm-order-button');
+const divPopUp = document.querySelector('.active-popup-background');
 
 export function hideEmptyCartMessage(){
     const cartNothingAddedInfo = document.querySelector('.nothing-added-info');
@@ -115,7 +119,6 @@ export function removeItemInTheCart(dessertName, dessertQuantity, dessertPriceAd
 
         if(dessertQuantity === 0){
             itemElement.parentElement.remove();
-            console.log("Item visual removido do carrinho");
         }
     }
 }
@@ -131,3 +134,32 @@ async function removeTotalItems(dessertName) {
         console.error("Error:", e);
     }
 }
+
+confirmOrderButton.addEventListener('click', () => {
+    const totalPriceInThePopUp = document.querySelector('.price-of-total-price')
+    const dessertQuantity = document.querySelector('.dessert-quantity');
+    fetch('/api/desserts')
+        .then(response => {
+            if(!response.ok){
+                throw new Error("Without desserts");
+            }
+            divPopUp.classList.remove('hidden');
+            divPopUp.classList.add('visible');
+            return response.json();
+        })
+        .then(data => {
+            const desserts = data.desserts;
+
+            desserts.forEach(dessert => {
+                createTheItemsInfoIntoThePopUp(dessert.image, dessert.name, dessert.count, dessert.price, dessert.totalPriceItem)
+            });
+
+            let price = parseFloat(data.totalPrice).toFixed(2);
+            price = price.padStart(4, '0');
+            dessertQuantity.textContent = 0;
+            totalPriceInThePopUp.textContent = `$${price}`;
+        })
+        .catch(e => {
+            console.log("Error: ", e);
+        });
+});
