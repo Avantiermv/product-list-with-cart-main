@@ -72,4 +72,6 @@ app.post('/api/start-new-order', (req, res) => {
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('./public'));
 
-export default app;
+app.listen(3000, () => {
+    console.log('http://localhost:3000');
+})
