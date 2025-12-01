@@ -10,6 +10,7 @@ const __dirname = dirname(__filename);
 
 export const app = express(); 
 
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -69,9 +70,5 @@ app.post('/api/start-new-order', (req, res) => {
     res.status(200).json({message: "Starting a new order..."});
 });
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.static('./public'));
 
-app.listen(3000, () => {
-    console.log('http://localhost:3000');
-})
+export default app;
