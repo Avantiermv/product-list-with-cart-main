@@ -42,7 +42,7 @@ Access at:
 
 ## Project status
 
-The challenge is complete! You can access in this link [dessert-app](https://dessert-app-with-cart.vercel.app/)
+The challenge is complete! You can access in this link [dessert-app](https://product-list-with-cart-main-henna-tau.vercel.app/)
 
 ## Author
 
