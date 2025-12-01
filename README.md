@@ -6,7 +6,7 @@ This project is a challenge from the [Frontend-Mentor](https://www.frontendmento
 
 ## 📸 Visuals and Screenshots
 
-[](./public/images/screencapture-localhost-3000-2025-11-28-08_57_16.png)
+![](./public/images/screencapture-localhost-3000-2025-11-28-08_57_16.png)
 
 ## Technologies            
   
